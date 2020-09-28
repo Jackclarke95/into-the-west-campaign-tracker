@@ -23,7 +23,7 @@ Trace:
 
 npm manifest: 
   {
-    "name": "react-setup-from-scratch",
+    "name": "into-the-west-campaign-tracker",
     "scripts": {
       "serve": "webpack-dev-server --mode development",
       "build": "webpack --mode production",
