@@ -1,0 +1,46 @@
+{
+  "characters": [
+    {
+      "name": "Arthur",
+      "level": 6,
+      "race": "Human",
+      "class": "Fighter",
+      "session-count": 2,
+      "sessions-to-level-up": 1,
+      "next-session": "01/10/20"
+    },
+    {
+      "name": "Babel",
+      "level": 7,
+      "race": "Kenku",
+      "class": "Artificer",
+      "session-count": 12,
+      "sessions-to-level-up": 1
+    },
+    {
+      "name": "Baptiste",
+      "level": 7,
+      "race": "High elf",
+      "class": "Rogue",
+      "session-count": 5,
+      "sessions-to-level-up": 3
+    },
+
+    {
+      "name": "Big Percy",
+      "level": 8,
+      "race": "Half-orc",
+      "class": "Fighter",
+      "session-count": 13,
+      "sessions-to-level-up": 3
+    },
+    {
+      "name": "Chaia",
+      "level": 7,
+      "race": "Kenku",
+      "class": "Artificer",
+      "session-count": 12,
+      "sessions-to-level-up": 1
+    }
+  ]
+}
