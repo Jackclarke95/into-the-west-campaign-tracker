@@ -29,6 +29,10 @@ h1 {
   }
 }
 
+ul {
+  padding-left: 1.5em;
+}
+
 .panel {
   background-color: #fbfbfb;
   padding: 1em;
@@ -37,6 +41,35 @@ h1 {
   margin-right: 1em;
   padding-bottom: 1em;
   display: inline-block;
+  &:hover {
+    box-shadow: 0 0 10px darken(#fbfbfb, 25%);
+  }
+  .header-and-button {
+    display: flex;
+    h2 {
+      flex-grow: 1;
+    }
+    .button-container {
+      display: inline-block;
+      button {
+        flex-grow: 1;
+        margin-top: 1em;
+        border: none;
+        padding: 6px 12px;
+        padding: 12px;
+        align-content: center;
+        font-size: large;
+        &:hover,
+        &:focus {
+          cursor: pointer;
+          outline: none;
+        }
+        &:hover {
+          background-color: darken(#efefef, 5%);
+        }
+      }
+    }
+  }
 }
 
 table {

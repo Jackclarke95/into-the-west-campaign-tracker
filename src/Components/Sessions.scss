@@ -31,38 +31,13 @@
     }
   }
 
-  .header-and-button {
-    display: flex;
-    h2 {
-      flex-grow: 1;
-    }
-    .button-container {
-      display: inline-block;
-      button {
-        flex-grow: 1;
-        margin-top: 1em;
-        border: none;
-        padding: 6px 12px;
-        padding: 12px;
-        align-content: center;
-        font-size: large;
-        &:hover,
-        &:focus {
-          cursor: pointer;
-          outline: none;
-        }
-        &:hover {
-          background-color: darken(#efefef, 5%);
-        }
-      }
-    }
-  }
-
   .table-key {
+    margin-top: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
     flex-grow: 1;
     display: flex;
     justify-content: space-between;
-    margin: 1em 1em 0 1em;
     .key-item {
       display: flex;
       align-items: center;

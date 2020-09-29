@@ -40,7 +40,7 @@
     {
       "avatar-link": "https://www.dndbeyond.com/avatars/10265/600/637240973238597441.png",
       "name": "Chaia",
-      "race": "Kenku",
+      "race": "Wood elf",
       "classes": [{ "class": "Druid", "level": 6 }],
       "session-count": 12,
       "sessions-to-level-up": 1
@@ -55,6 +55,89 @@
       ],
       "session-count": 12,
       "sessions-to-level-up": 1
+    },
+    {
+      "avatar-link": "https://www.dndbeyond.com/avatars/11957/368/1581111423-33132303.jpeg",
+      "name": "Ember",
+      "race": "Fire genasi",
+      "classes": [{ "class": "Cleric", "level": 5 }],
+      "session-count": 3
+    },
+    {
+      "avatar-link": "https://www.dndbeyond.com/avatars/12649/693/1581111423-35382595.jpeg",
+      "name": "Grimshroom",
+      "race": "Goblin",
+      "classes": [{ "class": "Druid", "level": 6 }],
+      "session-count": 0
+    },
+    {
+      "avatar-link": "https://www.dndbeyond.com/avatars/12923/301/1581111423-35316039.jpeg",
+      "name": "Hans",
+      "race": "Lightfoot halfling",
+      "classes": [
+        { "class": "Bard", "level": 5 },
+        { "class": "Warlock", "level": 1 }
+      ],
+      "session-count": 6
+    },
+    {
+      "avatar-link": "https://www.dndbeyond.com/avatars/11688/396/1581111423-31690387.jpeg",
+      "name": "Harold",
+      "race": "Human",
+      "classes": [
+        { "class": "Fighter", "level": 5 },
+        { "class": "Ranger", "level": 1 }
+      ],
+      "session-count": 1
+    },
+    {
+      "avatar-link": "https://www.dndbeyond.com/avatars/9616/486/637216416498708507.jpeg",
+      "name": "Lorenz",
+      "race": "Tiefling",
+      "classes": [{ "class": "Sorcerer", "level": 6 }],
+      "session-count": 9
+    },
+    {
+      "avatar-link": "https://www.dndbeyond.com/avatars/9765/125/1581111423-26114444.jpeg",
+      "name": "Luren",
+      "race": "Tiefling",
+      "classes": [{ "class": "Warlock", "level": 5 }],
+      "session-count": 6
+    },
+    {
+      "avatar-link": "https://www.dndbeyond.com/avatars/9765/428/1581111423-26133759.jpeg",
+      "name": "Qiharice",
+      "race": "Lightfoot halfling",
+      "classes": [{ "class": "Bard", "level": 6 }],
+      "session-count": 1
+    },
+    {
+      "avatar-link": "https://www.dndbeyond.com/avatars/18/19/636378975313015155.jpeg",
+      "name": "Raahm",
+      "race": "Human",
+      "classes": [{ "class": "Barbarian", "level": 3 }],
+      "session-count": 1
+    },
+    {
+      "avatar-link": "https://www.dndbeyond.com/avatars/9765/133/1581111423-26521341.jpeg",
+      "name": "Thurdun",
+      "race": "Triton",
+      "classes": [{ "class": "Sorcerer", "level": 3 }],
+      "session-count": 1
+    },
+    {
+      "avatar-link": "https://www.dndbeyond.com/avatars/12250/463/1581111423-34130081.jpeg",
+      "name": "Utredyn",
+      "race": "Triton",
+      "classes": [{ "class": "Barbarian", "level": 6 }],
+      "session-count": 1
+    },
+    {
+      "avatar-link": "https://www.dndbeyond.com/avatars/18/18/636378975214214687.jpeg",
+      "name": "Zaukan",
+      "race": "Triton",
+      "classes": [{ "class": "Sorcerer", "level": 8 }],
+      "session-count": 13
     }
   ],
   "sessions": [
@@ -86,9 +169,9 @@
       "name": "TEST - Space Available - Scheduled",
       "dungeon-master": "Dave",
       "suggested-by": "Dave",
+      "date": "14/10/20",
       "players": ["Arthur", "Big Percy", "Esyln", "Qiharice"],
-      "max-players": 5,
-      "date": "14/10/20"
+      "max-players": 5
     },
     {
       "name": "TEST - Full Available - Not Scheduled",

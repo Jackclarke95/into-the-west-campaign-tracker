@@ -5,7 +5,12 @@ import "./Characters.scss";
 function Links() {
   return (
     <div className="panel characters-panel">
-      <h2>Character Progression</h2>
+      <div className="header-and-button">
+        <h2>Character Progression</h2>
+        <div className="button-container">
+          <button>Create Character</button>
+        </div>
+      </div>
       <table>
         <thead key="thead">
           <tr>
@@ -39,10 +44,16 @@ function Links() {
                   {calculateLevel(character.classes)}
                 </td>
                 <td className="column session-count">
-                  {character["session-count"]}
+                  {
+                    //TODO: Calculate this automatically
+                    character["session-count"]
+                  }
                 </td>
                 <td className="column sessions-to-level-up">
-                  {character["sessions-to-level-up"]}
+                  {
+                    //TODO: Calculate this automatically
+                    character["sessions-to-level-up"]
+                  }
                 </td>
                 <td className="column next-session">
                   {character["next-session"]

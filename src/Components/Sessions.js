@@ -78,14 +78,14 @@ function Sessions() {
           title="A session which is both full but has not yet been scheduled"
         >
           <div className="key-colour-block"></div>
-          <div>Full - Scheduled</div>
+          <div>Full - Planning</div>
         </div>
         <div
           className="key-item space-available-scheduled"
           title="A session which is not yet full but has been scheduled"
         >
           <div className="key-colour-block"></div>
-          <div>Spaces Available - Planning</div>
+          <div>Spaces Available - Scheduled</div>
         </div>
         <div
           className="key-item planning"
