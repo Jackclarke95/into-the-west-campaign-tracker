@@ -81,7 +81,7 @@ function Links() {
           </ul>
         </div>
         <div>
-          <h3>Homwbrew</h3>
+          <h3>Homebrew</h3>
           <ul>
             <li>
               <a

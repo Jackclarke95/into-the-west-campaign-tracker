@@ -1,2 +1,27 @@
 .characters-panel {
+  table {
+    td.column.name {
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      img {
+        object-fit: cover;
+        width: 35px;
+        height: 35px;
+      }
+      div {
+        margin-left: 1em;
+      }
+    }
+    tbody {
+      tr {
+        &:nth-child(2n-1) {
+          background-color: darken(#fbfbfb, 5%);
+          &:hover {
+            background-color: darken(#fbfbfb, 10%);
+          }
+        }
+      }
+    }
+  }
 }

@@ -1,73 +1,101 @@
 {
-    "characters": [
-      {
-        "name": "Arthur",
-        "level": 6,
-        "race": "Human",
-        "class": "Fighter",
-        "session-count": 2,
-        "sessions-to-level-up": 1,
-        "next-session": "01/10/20"
-      },
-      {
-        "name": "Babel",
-        "level": 7,
-        "race": "Kenku",
-        "class": "Artificer",
-        "session-count": 12,
-        "sessions-to-level-up": 1
-      },
-      {
-        "name": "Baptiste",
-        "level": 7,
-        "race": "High elf",
-        "class": "Rogue",
-        "session-count": 5,
-        "sessions-to-level-up": 3
-      },
-  
-      {
-        "name": "Big Percy",
-        "level": 8,
-        "race": "Half-orc",
-        "class": "Fighter",
-        "session-count": 13,
-        "sessions-to-level-up": 3
-      },
-      {
-        "name": "Chaia",
-        "level": 7,
-        "race": "Kenku",
-        "class": "Artificer",
-        "session-count": 12,
-        "sessions-to-level-up": 1
-      }
-    ],
-    "sessions": [
-      {
-        "name": "WANTED: Iron Kara",
-        "dungeon-master": "JBC",
-        "suggested-by": "Chaia",
-        "date": "01/10/20",
-        "players": "Arthur, Chaia, Hans, Pipit, Utredyn",
-        "player-count": "5/5",
-        "discord-channel": "#session-2"
-      },
-      {
-        "name": "Epic Historical Adventure",
-        "dungeon-master": "Jack",
-        "suggested-by": "Jack",
-        "players": "Benji, Owen, Rowan, Sarah",
-        "player-count": "4/4",
-        "discord-channel": "#epic-adventure"
-      },
-      {
-        "name": "Mumsy's Extra Planar Adventures",
-        "dungeon-master": "Dave",
-        "suggested-by": "Dave",
-        "players": "Arthur, Big Percy, Esyln, Qiharice",
-        "player-count": "4/5"
-      }
-    ]
-  }
-  
+  "characters": [
+    {
+      "avatar-link": "https://www.dndbeyond.com/avatars/12923/282/1581111423-34044602.jpeg",
+      "name": "Arthur",
+      "race": "Human",
+      "classes": [
+        { "class": "Fighter", "level": 5 },
+        { "class": "Barbarian", "level": 1 }
+      ],
+      "starting-level": 6,
+      "session-count": 2,
+      "sessions-to-level-up": 1,
+      "next-session": "01/10/20"
+    },
+    {
+      "avatar-link": "https://www.dndbeyond.com/avatars/9608/256/637216255844292177.jpeg",
+      "name": "Babel",
+      "race": "Kenku",
+      "classes": [{ "class": "Artificer", "level": 7 }],
+      "session-count": 12,
+      "sessions-to-level-up": 1
+    },
+    {
+      "avatar-link": "https://www.dndbeyond.com/avatars/9107/446/637196227255761865.jpeg",
+      "name": "Baptiste",
+      "race": "High elf",
+      "classes": [{ "class": "Rogue", "level": 5 }],
+      "session-count": 5,
+      "sessions-to-level-up": 3
+    },
+    {
+      "avatar-link": "https://www.dndbeyond.com/avatars/17/428/636377886920052559.jpeg",
+      "name": "Big Percy",
+      "race": "Half-orc",
+      "classes": [{ "class": "Fighter", "level": 8 }],
+      "session-count": 13,
+      "sessions-to-level-up": 3
+    },
+    {
+      "avatar-link": "https://www.dndbeyond.com/avatars/10265/600/637240973238597441.png",
+      "name": "Chaia",
+      "race": "Kenku",
+      "classes": [{ "class": "Druid", "level": 6 }],
+      "session-count": 12,
+      "sessions-to-level-up": 1
+    },
+    {
+      "avatar-link": "https://www.dndbeyond.com/avatars/11048/16/1581111423-30318222.jpeg",
+      "name": "Pipit",
+      "race": "Wood half-elf",
+      "classes": [
+        { "class": "Ranger", "level": 4 },
+        { "class": "Rogue", "level": 2 }
+      ],
+      "session-count": 12,
+      "sessions-to-level-up": 1
+    }
+  ],
+  "sessions": [
+    {
+      "name": "WANTED: Iron Kara",
+      "dungeon-master": "JBC",
+      "suggested-by": "Chaia",
+      "date": "01/10/20",
+      "players": ["Arthur", "Chaia", "Hans", "Pipit", "Utredyn"],
+      "max-players": 5,
+      "discord-channel": "#session-2"
+    },
+    {
+      "name": "Epic Historical Adventure",
+      "dungeon-master": "Jack",
+      "suggested-by": "Jack",
+      "players": ["Benji", "Owen", "Rowan", "Sarah"],
+      "max-players": 5,
+      "discord-channel": "#epic-adventure"
+    },
+    {
+      "name": "Mumsy's Extra Planar Adventures",
+      "dungeon-master": "Dave",
+      "suggested-by": "Dave",
+      "players": ["Arthur", "Big Percy", "Esyln", "Qiharice"],
+      "max-players": 5
+    },
+    {
+      "name": "TEST - Space Available - Scheduled",
+      "dungeon-master": "Dave",
+      "suggested-by": "Dave",
+      "players": ["Arthur", "Big Percy", "Esyln", "Qiharice"],
+      "max-players": 5,
+      "date": "14/10/20"
+    },
+    {
+      "name": "TEST - Full Available - Not Scheduled",
+      "dungeon-master": "Dave",
+      "suggested-by": "Dave",
+      "players": ["Arthur", "Big Percy", "Esyln", "Qiharice"],
+      "max-players": 4
+    }
+  ]
+}

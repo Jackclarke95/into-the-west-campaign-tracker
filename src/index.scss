@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
   #root {
     display: flex;
     flex-direction: column;
@@ -16,6 +17,18 @@ code {
     monospace;
 }
 
+h1 {
+  text-align: center;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  .panel:last-of-type {
+    margin-left: 0;
+  }
+}
+
 .panel {
   background-color: #fbfbfb;
   padding: 1em;
@@ -24,9 +37,6 @@ code {
   margin-right: 1em;
   padding-bottom: 1em;
   display: inline-block;
-  h2 {
-    text-align: center;
-  }
 }
 
 table {
@@ -44,17 +54,7 @@ table {
   td {
     margin: 0;
   }
-  tbody {
-    tr {
-      &:hover {
-        background-color: darken(#fbfbfb, 5%);
-      }
-      &:nth-child(2n-1) {
-        background-color: #efefef;
-        &:hover {
-          background-color: darken(#efefef, 5%);
-        }
-      }
-    }
+  tbody tr:hover {
+    background-color: darken(#fbfbfb, 15%);
   }
 }

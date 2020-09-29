@@ -5,7 +5,12 @@ import "./Sessions.scss";
 function Sessions() {
   return (
     <span className="panel sessions-panel">
-      <h2>Planned Adventures</h2>
+      <div className="header-and-button">
+        <h2>Planned Adventures</h2>
+        <div className="button-container">
+          <button>Suggest Adventure</button>
+        </div>
+      </div>
       <table>
         <thead key="thead">
           <tr>
@@ -21,7 +26,21 @@ function Sessions() {
         <tbody>
           {data.sessions.map((session, i) => {
             return (
-              <tr key={i}>
+              <tr
+                key={i}
+                data-space-available={
+                  session.players.length === session["max-players"] &&
+                  session.date
+                    ? "full-scheduled"
+                    : session.players.length === session["max-players"] &&
+                      !session.date
+                    ? "full-planning"
+                    : session.players.length < session["max-players"] &&
+                      session.date
+                    ? "space-available-scheduled"
+                    : "planning"
+                }
+              >
                 <td className="column name">{session.name}</td>
                 <td className="column dungeon-master">
                   {session["dungeon-master"]}
@@ -32,9 +51,9 @@ function Sessions() {
                 <td className="column date">
                   {session.date ? session.date : "TBD"}
                 </td>
-                <td className="column players">{session.players}</td>
+                <td className="column players">{session.players.join(", ")}</td>
                 <td className="column player-count">
-                  {session["player-count"]}
+                  {session.players.length}/{session["max-players"]}
                 </td>
                 <td className="column discord-channel">
                   {session["discord-channel"]
@@ -46,8 +65,35 @@ function Sessions() {
           })}
         </tbody>
       </table>
-      <div className="button-container">
-        <button>Suggest Adventure</button>
+      <div className="table-key">
+        <div
+          className="key-item full-scheduled"
+          title="A session which is both full and has been scheduled"
+        >
+          <div className="key-colour-block"></div>
+          <div>Full - Scheduled</div>
+        </div>
+        <div
+          className="key-item full-planning"
+          title="A session which is both full but has not yet been scheduled"
+        >
+          <div className="key-colour-block"></div>
+          <div>Full - Scheduled</div>
+        </div>
+        <div
+          className="key-item space-available-scheduled"
+          title="A session which is not yet full but has been scheduled"
+        >
+          <div className="key-colour-block"></div>
+          <div>Spaces Available - Planning</div>
+        </div>
+        <div
+          className="key-item planning"
+          title="A session which is neither full nor has been scheduled"
+        >
+          <div className="key-colour-block"></div>
+          <div>Spaces Available - Planning</div>
+        </div>
       </div>
     </span>
   );

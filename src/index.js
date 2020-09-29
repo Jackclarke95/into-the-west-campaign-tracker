@@ -8,10 +8,13 @@ import Rules from "./Components/Rules";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Links />
+    <h1>Into The West Campaign Tracker</h1>
+    <div className="info">
+      <Links />
+      <Rules />
+    </div>
     <Characters />
     <Sessions />
-    <Rules />
   </React.StrictMode>,
   document.getElementById("root")
 );

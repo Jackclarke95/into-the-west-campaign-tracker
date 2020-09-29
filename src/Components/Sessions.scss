@@ -3,25 +3,87 @@
     td.column.name {
       text-align: left;
     }
+    tr {
+      &[data-space-available="full-scheduled"] {
+        background-color: #b8cddf;
+        &:hover {
+          background-color: darken(#b8cddf, 5%);
+        }
+      }
+      &[data-space-available="full-planning"] {
+        background-color: #bfdfc9;
+        &:hover {
+          background-color: darken(#bfdfc9, 5%);
+        }
+      }
+      &[data-space-available="space-available-scheduled"] {
+        background-color: #e4dbad;
+        &:hover {
+          background-color: darken(#e4dbad, 5%);
+        }
+      }
+      &[data-space-available="planning"] {
+        background-color: #e0c8b8;
+        &:hover {
+          background-color: darken(#e0c8b8, 5%);
+        }
+      }
+    }
   }
 
-  .button-container {
-    display: inline-block;
-    button {
+  .header-and-button {
+    display: flex;
+    h2 {
       flex-grow: 1;
-      margin-top: 1em;
-      border: none;
-      padding: 6px 12px;
-      padding: 12px;
-      align-content: center;
-      font-size: large;
-      &:hover,
-      &:focus {
-        cursor: pointer;
-        outline: none;
+    }
+    .button-container {
+      display: inline-block;
+      button {
+        flex-grow: 1;
+        margin-top: 1em;
+        border: none;
+        padding: 6px 12px;
+        padding: 12px;
+        align-content: center;
+        font-size: large;
+        &:hover,
+        &:focus {
+          cursor: pointer;
+          outline: none;
+        }
+        &:hover {
+          background-color: darken(#efefef, 5%);
+        }
       }
-      &:hover {
-        background-color: darken(#efefef, 5%);
+    }
+  }
+
+  .table-key {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    margin: 1em 1em 0 1em;
+    .key-item {
+      display: flex;
+      align-items: center;
+      .key-colour-block {
+        height: 1em;
+        width: 1em;
+        margin-right: 0.5em;
+      }
+      &.full-scheduled .key-colour-block {
+        background-color: #bfd5df;
+      }
+
+      &.full-planning .key-colour-block {
+        background-color: #bfdfc9;
+      }
+
+      &.space-available-scheduled .key-colour-block {
+        background-color: #e4dbad;
+      }
+      &.planning .key-colour-block {
+        background-color: #e0c8b8;
       }
     }
   }
