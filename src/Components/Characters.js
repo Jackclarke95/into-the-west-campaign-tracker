@@ -21,7 +21,7 @@ function Links() {
           </tr>
         </thead>
         <tbody>
-          {data.character.map((character, i) => {
+          {data.characters.map((character, i) => {
             return (
               <tr key={i}>
                 <td className="column name">{character.name}</td>
