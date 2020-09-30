@@ -2,7 +2,7 @@ import React from "react";
 import data from "../Data/Data.json";
 import "./Characters.scss";
 
-function Links() {
+function Characters() {
   return (
     <div className="panel characters-panel">
       <div className="header-and-button">
@@ -62,7 +62,7 @@ function Links() {
                     ? character["next-session"]
                     : "N/A"}
                 </td>
-                <td className="column test-data">{`${calculateSessionsToNextLevel(
+                <td className="column test-data">{`${calculateTotalSessionsToNextLevel(
                   calculateLevelFromClasses(character.classes)
                 )} - ${calculateOffsetSessionsRequiredForLevel(
                   calculateLevelFromClasses(character.classes)
@@ -120,7 +120,7 @@ function calculateLevelFromClasses(classes) {
  * @returns {number} The remaining number of sessions a character must attend in order to gain a level
  */
 function calculateRemainingSessionsForLevelUp(startingLevel, sessionCount) {
-  var currentLevel = calculateCurrentLevel(startingLevel, sessionCount);
+  var currentLevel = calculateLevelFromSessions(startingLevel, sessionCount);
   console.log(currentLevel);
 
   var sessionsRequiredForNext = calculateOffsetSessionsRequiredForLevel(
@@ -141,7 +141,7 @@ function calculateRemainingSessionsForLevelUp(startingLevel, sessionCount) {
  *
  * @returns {number} The number of sessions required for this level
  */
-function calculateSessionsToNextLevel(level) {
+function calculateTotalSessionsToNextLevel(level) {
   return parseInt(level / 6) + 2;
 }
 
@@ -153,15 +153,15 @@ function calculateSessionsToNextLevel(level) {
  *
  * @returns {number} The character's level
  */
-function calculateCurrentLevel(startingLevel, sessionCount) {
+function calculateLevelFromSessions(startingLevel, sessionCount) {
   var currentLevel = startingLevel;
   var remainingSessions = sessionCount;
-  var sessionsToLevel = calculateSessionsToNextLevel(currentLevel + 1);
+  var sessionsToLevel = calculateTotalSessionsToNextLevel(currentLevel + 1);
 
   while (remainingSessions >= sessionsToLevel) {
     remainingSessions -= sessionsToLevel;
     currentLevel++;
-    sessionsToLevel = calculateSessionsToNextLevel(currentLevel + 1);
+    sessionsToLevel = calculateTotalSessionsToNextLevel(currentLevel + 1);
   }
 
   return currentLevel;
@@ -181,10 +181,10 @@ function calculateOffsetSessionsRequiredForLevel(level) {
 
   while (currentLevel < level) {
     currentLevel++;
-    minimumSessions += calculateSessionsToNextLevel(currentLevel);
+    minimumSessions += calculateTotalSessionsToNextLevel(currentLevel);
   }
 
   return minimumSessions;
 }
 
-export default Links;
+export default Characters;
