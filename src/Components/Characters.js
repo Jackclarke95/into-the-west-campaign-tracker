@@ -27,18 +27,31 @@ function Characters() {
           </tr>
         </thead>
         <tbody>
-          {data.characters.map((character, i) => {
+          {data.characters.map((character) => {
             console.log(character);
             return (
-              <tr key={i}>
+              <tr key={character.id} data-id={character.id}>
                 <td className="column name">
                   <img
-                    src={character["avatar-link"]}
+                    src={`https://www.dndbeyond.com/avatars/${character["avatar-link"]}`}
                     alt={character.name + " avatar"}
                   />
-                  <div className="character-name">{character.name}</div>
+                  <a
+                    className="character-name"
+                    target="_blank"
+                    href={`https://www.dndbeyond.com/profile/${character["player-dndbeyond-name"]}/characters/${character.id}`}
+                  >
+                    {character.name}
+                  </a>
                 </td>
-                <td className="column race">{character.race}</td>
+                <td className="column race">
+                  <a
+                    target="_blank"
+                    href={`https://www.dndbeyond.com/races/${character.race}`}
+                  >{`${character.race}${
+                    character.subrace ? ` (${character.subrace})` : ""
+                  }`}</a>
+                </td>
                 <td className="column class">
                   {formatClasses(character.classes)}
                 </td>

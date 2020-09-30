@@ -33,6 +33,17 @@ ul {
   padding-left: 1.5em;
 }
 
+a {
+  color: black;
+  &:visited {
+    color: black;
+  }
+  &[target="_blank"]::after {
+    content: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAQElEQVR42qXKwQkAIAxDUUdxtO6/RBQkQZvSi8I/pL4BoGw/XPkh4XigPmsUgh0626AjRsgxHTkUThsG2T/sIlzdTsp52kSS1wAAAABJRU5ErkJggg==);
+    margin: 0 3px 0 5px;
+  }
+}
+
 .panel {
   background-color: #fbfbfb;
   padding: 1em;
