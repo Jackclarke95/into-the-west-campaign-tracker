@@ -18,7 +18,7 @@ function Links() {
             <th className="column race">Race</th>
             <th className="column class">Class</th>
             <th className="column level">Current Level</th>
-            <th className="column session-count">Session Count</th>
+            <th className="column session-count">Sessions Attended</th>
             <th className="column sessions-to-level-up">
               Sessions to Level Up
             </th>
@@ -180,10 +180,8 @@ function calculateOffsetSessionsRequiredForLevel(level) {
   var currentLevel = 1;
 
   while (currentLevel < level) {
-    debugger;
     currentLevel++;
     minimumSessions += calculateSessionsToNextLevel(currentLevel);
-    debugger;
   }
 
   return minimumSessions;
