@@ -144,8 +144,8 @@
     {
       "avatar-link": "https://www.dndbeyond.com/avatars/18/18/636378975214214687.jpeg",
       "name": "Zaukan",
-      "race": "Triton",
-      "classes": [{ "class": "Sorcerer", "level": 8 }],
+      "race": "Goliath",
+      "classes": [{ "class": "Paladin", "level": 8 }],
       "session-count": 13,
       "starting-level": 3
     }

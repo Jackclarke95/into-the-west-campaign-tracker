@@ -20,7 +20,7 @@ function Links() {
             <th className="column level">Current Level</th>
             <th className="column session-count">Sessions Attended</th>
             <th className="column sessions-to-level-up">
-              Sessions to Level Up
+              Sessions Until Level Up
             </th>
             <th className="column next-session">Next Session</th>
             <th className="column test-date">Test Data</th>
