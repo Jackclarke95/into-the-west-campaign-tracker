@@ -34,7 +34,7 @@ function suggestAdventureContent() {
           <div className="dungeon-master">
             <label htmlFor="name">Dungeon Master</label>
             <select id="dungeon-master" name="dungeon-master">
-              <option value="no-dm"></option>
+              <option value="no-dm">None/Not Sure</option>
               <option value="jack">Jack</option>
               <option value="jbc">JBC</option>
               <option value="louis">Louis</option>

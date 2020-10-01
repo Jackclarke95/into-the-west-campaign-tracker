@@ -1,6 +1,6 @@
 import React from "react";
 import data from "../Data/Data.json";
-import "./Sessions.scss";
+import "./NextAdventure.scss";
 
 function NextAdventure() {
   const sessions = data.sessions
@@ -24,11 +24,22 @@ function NextAdventure() {
     });
 
   const nextSession = sessions[0];
+  var message;
+
+  if (nextSession["scheduled-date"]) {
+    message = `${nextSession.name} | Scheduled: ${new Date(
+      nextSession["scheduled-date"]
+    ).toLocaleDateString("en-GB")}`;
+  } else {
+    message = "None scheduled";
+  }
+
+  debugger;
 
   return (
     <span className="panel next-adventure">
       <b>Next Adventure: </b>
-      {nextSession.name}
+      {message}
     </span>
   );
 }

@@ -21,6 +21,10 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  margin-top: 0;
+}
+
 .info {
   display: flex;
   flex-direction: row;
@@ -45,9 +49,7 @@ form {
     margin-top: 1em;
     margin-bottom: 1em;
   }
-  textarea {
-    width: 100%;
-  }
+
   label {
     margin-right: 0.5em;
     margin-bottom: 0.5em;
@@ -63,14 +65,17 @@ form {
 
 .panel {
   background-color: #fbfbfb;
-  padding: 1em;
-  margin-top: 1em;
-  margin-left: 1em;
-  margin-right: 1em;
-  padding-bottom: 1em;
+  padding: 16px;
+  margin-top: 16px;
+  margin-left: 16px;
+  margin-right: 16px;
+  padding-bottom: 16px;
   display: inline-block;
   &:hover {
     box-shadow: 0 0px 10px darken(#fbfbfb, 15%);
+  }
+  h2 {
+    text-align: left;
   }
   .header-and-button {
     display: flex;
