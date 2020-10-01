@@ -20,18 +20,22 @@ h2 {
     width: 75%;
     height: 75%;
     padding: 2em;
+    display: flex;
+    flex-direction: column;
     .dismiss-button {
+      margin-top: -1em;
+      margin-right: -0.7em;
       transform: rotate(45deg);
-      position: absolute;
-      top: 9.5%;
-      right: 10.5%;
+      align-self: flex-end;
       font-weight: normal;
-      padding: 5px 10px;
       color: black;
       font-size: xx-large;
       &:hover {
         cursor: pointer;
       }
+    }
+    h2 {
+      margin-top: 0px;
     }
   }
 }
