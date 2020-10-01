@@ -93,11 +93,12 @@ function Characters() {
                 <td className="column test-data">
                   {data.players.map((player) => {
                     if (
-                      player["dndbeyond-name"] ==
+                      player["dndbeyond-name"] ===
                       character["player-dndbeyond-name"]
                     ) {
                       return (
                         <a
+                          key={player["dndbeyond-name"]}
                           rel="noopener noreferrer"
                           target="_blank"
                           href={`https://www.dndbeyond.com/members/${character["player-dndbeyond-name"]}`}
@@ -106,6 +107,8 @@ function Characters() {
                         </a>
                       );
                     }
+
+                    return null;
                   })}
                 </td>
               </tr>
