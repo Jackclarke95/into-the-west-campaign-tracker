@@ -3,6 +3,12 @@ import data from "../Data/Data.json";
 import "./Characters.scss";
 
 function Characters() {
+  const characters = data.characters.sort((a, b) => {
+    a = a.nickname ? a.nickname : a.name;
+    b = b.nickname ? b.nickname : b.name;
+    return a < b ? -1 : a > b ? 1 : 0;
+  });
+
   return (
     <div className="panel characters-panel">
       <div className="header-and-button">
@@ -23,29 +29,34 @@ function Characters() {
               Sessions Until Level Up
             </th>
             <th className="column next-session">Next Session</th>
-            <th className="column test-date">Test Data</th>
+            <th className="column test-date">Player</th>
           </tr>
         </thead>
         <tbody>
-          {data.characters.map((character) => {
-            console.log(character);
+          {characters.map((character) => {
             return (
-              <tr key={character.id} data-id={character.id}>
+              <tr
+                key={character.id}
+                data-id={character.id}
+                title={character.name}
+              >
                 <td className="column name">
                   <img
                     src={`https://www.dndbeyond.com/avatars/${character["avatar-link"]}`}
-                    alt={character.name + " avatar"}
+                    alt={character.nickname + " avatar"}
                   />
                   <a
                     className="character-name"
+                    rel="noopener noreferrer"
                     target="_blank"
                     href={`https://www.dndbeyond.com/profile/${character["player-dndbeyond-name"]}/characters/${character.id}`}
                   >
-                    {character.name}
+                    {character.nickname ? character.nickname : character.name}
                   </a>
                 </td>
                 <td className="column race">
                   <a
+                    rel="noopener noreferrer"
                     target="_blank"
                     href={`https://www.dndbeyond.com/races/${character.race}`}
                   >{`${character.race}${
@@ -75,11 +86,24 @@ function Characters() {
                     ? character["next-session"]
                     : "N/A"}
                 </td>
-                <td className="column test-data">{`${calculateTotalSessionsToNextLevel(
-                  calculateLevelFromClasses(character.classes)
-                )} - ${calculateOffsetSessionsRequiredForLevel(
-                  calculateLevelFromClasses(character.classes)
-                )}`}</td>
+                <td className="column test-data">
+                  {data.players.map((player) => {
+                    if (
+                      player["dndbeyond-name"] ==
+                      character["player-dndbeyond-name"]
+                    ) {
+                      return (
+                        <a
+                          rel="noopener noreferrer"
+                          target="_blank"
+                          href={`https://www.dndbeyond.com/members/${character["player-dndbeyond-name"]}`}
+                        >
+                          {player["dndbeyond-name"]}
+                        </a>
+                      );
+                    }
+                  })}
+                </td>
               </tr>
             );
           })}
@@ -134,7 +158,6 @@ function calculateLevelFromClasses(classes) {
  */
 function calculateRemainingSessionsForLevelUp(startingLevel, sessionCount) {
   var currentLevel = calculateLevelFromSessions(startingLevel, sessionCount);
-  console.log(currentLevel);
 
   var sessionsRequiredForNext = calculateOffsetSessionsRequiredForLevel(
     currentLevel + 1

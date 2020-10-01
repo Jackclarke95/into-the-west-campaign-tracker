@@ -53,7 +53,7 @@ a {
   padding-bottom: 1em;
   display: inline-block;
   &:hover {
-    box-shadow: 0 0 10px darken(#fbfbfb, 25%);
+    box-shadow: 0 0px 10px darken(#fbfbfb, 15%);
   }
   .header-and-button {
     display: flex;
@@ -91,6 +91,9 @@ table {
   border-spacing: 0;
   th {
     border-bottom: solid 1px black;
+  }
+  td > * {
+    vertical-align: middle;
   }
   th,
   td {
