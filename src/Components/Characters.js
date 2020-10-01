@@ -23,8 +23,8 @@ function Characters() {
             <th className="column name">Name</th>
             <th className="column race">Race</th>
             <th className="column class">Class</th>
-            <th className="column starting-level">Starting Level</th>
             <th className="column current-level">Current Level</th>
+            <th className="column starting-level">Starting Level</th>
             <th className="column session-count">Sessions Attended</th>
             <th className="column sessions-to-level-up">
               Sessions Until Level Up
@@ -107,7 +107,6 @@ function Characters() {
                         </a>
                       );
                     }
-
                     return null;
                   })}
                 </td>

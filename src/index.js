@@ -5,10 +5,12 @@ import Characters from "./Components/Characters";
 import Sessions from "./Components/Sessions";
 import Links from "./Components/Links";
 import Rules from "./Components/Rules";
+import NextAdventure from "./Components/NextAdventure";
 
 ReactDOM.render(
   <React.StrictMode>
     <h1>Into The West Campaign Tracker</h1>
+    <NextAdventure />
     <div className="info">
       <Links />
       <Rules />

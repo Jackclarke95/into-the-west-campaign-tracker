@@ -5,6 +5,7 @@ function Rules() {
   return (
     <span className="panel rules-panel">
       <h2>Rules</h2>
+      <p>Check back later...</p>
     </span>
   );
 }
