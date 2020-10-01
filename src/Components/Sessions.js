@@ -1,9 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import data from "../Data/Data.json";
-import SuggestAdventurePopup from "./SuggestAdventurePopup.js";
+import Popup from "./SuggestAdventurePopup.js";
 import "./Sessions.scss";
-import "./SuggestAdventurePopup.js";
 
 function Sessions() {
   const sessions = data.sessions
@@ -145,10 +144,7 @@ function Sessions() {
 }
 
 function launchSuggestAdventurePopup() {
-  ReactDOM.render(
-    <SuggestAdventurePopup />,
-    document.getElementById("popup-root")
-  );
+  ReactDOM.render(<Popup />, document.getElementById("popup-root"));
 }
 
 export default Sessions;

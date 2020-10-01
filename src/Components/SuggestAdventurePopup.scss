@@ -1,3 +1,38 @@
-h2 {
-  text-align: center;
+form {
+  display: flex;
+  flex-direction: column;
+  div {
+    display: flex;
+    flex-direction: row;
+    div {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      margin-left: 1em;
+      &:last-of-type {
+        margin-right: 0;
+      }
+      &:first-of-type {
+        margin-left: 0;
+      }
+      input,
+      select {
+        flex-grow: 1;
+      }
+    }
+    .adventure-name {
+      width: 60%;
+    }
+    // .max-players {
+    //   width: 10%;
+    // }
+    // .dungeon-master {
+    //   width: 40%;
+    // }
+  }
+  .adventure-description {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
 }
