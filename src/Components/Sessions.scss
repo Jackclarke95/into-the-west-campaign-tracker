@@ -40,6 +40,9 @@
     .key-item {
       display: flex;
       align-items: center;
+      div {
+        cursor: default;
+      }
       .key-colour-block {
         height: 1em;
         width: 1em;

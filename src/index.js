@@ -17,6 +17,8 @@ ReactDOM.render(
     </div>
     <Characters />
     <Sessions />
+    {/* TODO: Graveyard */}
+    {/* TODO: Player shop */}
   </React.StrictMode>,
   document.getElementById("root")
 );
