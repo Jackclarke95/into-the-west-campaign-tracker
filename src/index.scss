@@ -44,6 +44,26 @@ a {
   }
 }
 
+#popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(218, 218, 218, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  #popup-content {
+    background-color: white;
+    border: solid 1px black;
+    width: 75%;
+    height: 75%;
+    padding: 2em;
+  }
+}
+
 .panel {
   background-color: #fbfbfb;
   padding: 1em;

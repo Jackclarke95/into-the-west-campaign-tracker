@@ -1,6 +1,9 @@
 import React from "react";
+import ReactDOM from "react-dom";
 import data from "../Data/Data.json";
+import SuggestAdventurePopup from "./SuggestAdventurePopup.js";
 import "./Sessions.scss";
+import "./SuggestAdventurePopup.js";
 
 function Sessions() {
   const sessions = data.sessions
@@ -28,7 +31,9 @@ function Sessions() {
       <div className="header-and-button">
         <h2>Planned Adventures</h2>
         <div className="button-container">
-          <button>Suggest Adventure</button>
+          <button onClick={() => launchSuggestAdventurePopup()}>
+            Suggest Adventure
+          </button>
         </div>
       </div>
       <table>
@@ -65,11 +70,15 @@ function Sessions() {
                 <td className="column name">{session.name}</td>
                 <td className="column dungeon-master">
                   {data.players.map((player) => {
-                    if (player["dndbeyond-name"] == session["dungeon-master"]) {
+                    if (
+                      player["dndbeyond-name"] === session["dungeon-master"]
+                    ) {
                       return player["screen-name"]
                         ? player["screen-name"]
                         : player["name"];
                     }
+
+                    return null;
                   })}
                 </td>
                 <td className="column suggested-by">
@@ -132,6 +141,13 @@ function Sessions() {
         </div>
       </div>
     </span>
+  );
+}
+
+function launchSuggestAdventurePopup() {
+  ReactDOM.render(
+    <SuggestAdventurePopup />,
+    document.getElementById("popup-root")
   );
 }
 
