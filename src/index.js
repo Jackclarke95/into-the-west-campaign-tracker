@@ -6,6 +6,7 @@ import Sessions from "./Components/Sessions";
 import Links from "./Components/Links";
 import Rules from "./Components/Rules";
 import NextAdventure from "./Components/NextAdventure";
+import DeploymentDate from "./Components/DeploymentDate";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -19,6 +20,7 @@ ReactDOM.render(
     <Sessions />
     {/* TODO: Graveyard */}
     {/* TODO: Player shop */}
+    <DeploymentDate />
   </React.StrictMode>,
   document.getElementById("root")
 );
