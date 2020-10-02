@@ -1,10 +1,9 @@
 import React from "react";
 import data from "../Data/Data.json";
-import "./NextAdventure.scss";
+import "./Style/NextAdventure.scss";
 
 function NextAdventure() {
   const sessions = data.sessions
-    // Remove sessions in the past
     .filter(
       (x) =>
         new Date(x["scheduled-date"]) > new Date() ||
@@ -12,29 +11,18 @@ function NextAdventure() {
     )
     // Order by scheduled date
     .sort((a, b) => {
-      if (
-        (a["scheduled-date"] && !b["scheduled-date"]) ||
-        (b["scheduled-date"] && !a["scheduled-date"])
-      ) {
+      if (a["scheduled-date"] ? !b["scheduled-date"] : b["scheduled-date"])
         return -1;
-      }
 
-      return (
-        new Date(a["scheduled-date"] ? a["scheduled-date"] : 0) -
-        new Date(b["scheduled-date"] ? b["scheduled-date"] : 0)
-      );
+      return new Date(a["scheduled-date"]) - new Date(b["scheduled-date"]);
     });
 
   const nextSession = sessions[0];
-  var message;
-
-  if (nextSession["scheduled-date"]) {
-    message = `${nextSession.name} | Scheduled: ${new Date(
-      nextSession["scheduled-date"]
-    ).toLocaleDateString("en-GB")}`;
-  } else {
-    message = "None scheduled";
-  }
+  var message = nextSession["scheduled-date"]
+    ? `${nextSession.name} | Scheduled: ${new Date(
+        nextSession["scheduled-date"]
+      ).toLocaleDateString("en-GB")}`
+    : "None scheduled";
 
   return (
     <span className="panel next-adventure">

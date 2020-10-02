@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./Popup.scss";
+import "./Style/Popup.scss";
 
 /**
  * Popup window component containing a title and content
  *
- * @param {*} title The title for the popup window
- * @param {*} content The content elements of the popup window
+ * @param {string} title The title for the popup window
+ * @param {string} content The content elements of the popup window
  *
  * @returns A popup window with the parameters
  */

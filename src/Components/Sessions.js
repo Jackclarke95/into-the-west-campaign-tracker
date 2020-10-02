@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import data from "../Data/Data.json";
 import Popup from "./SuggestAdventurePopup.js";
-import "./Sessions.scss";
+import "./Style/Sessions.scss";
 
 function Sessions() {
   const sessions = data.sessions
@@ -14,16 +14,11 @@ function Sessions() {
     )
     // Order by suggested date
     .sort((a, b) => {
-      const aDate = new Date(a["suggested-date"]);
-      const bDate = new Date(b["suggested-date"]);
-      return aDate - bDate;
+      return new Date(a["suggested-date"]) - new Date(b["suggested-date"]);
     })
     // Then order by scheduled date, retaining order by suggested date for unscheduled sessions
     .sort((a, b) => {
-      if (
-        (a["scheduled-date"] && !b["scheduled-date"]) ||
-        (b["scheduled-date"] && !a["scheduled-date"])
-      )
+      if (a["scheduled-date"] ? !b["scheduled-date"] : b["scheduled-date"])
         return -1;
 
       return new Date(a["scheduled-date"]) - new Date(b["scheduled-date"]);
@@ -50,26 +45,34 @@ function Sessions() {
             <th className="column players">Players/Characters</th>
             <th className="column player-count">Player Count</th>
             <th className="column discord-channel">Discord Channel</th>
+            <th className="column status">Status</th>
           </tr>
         </thead>
         <tbody>
           {sessions.map((session, i) => {
-            return (
-              <tr
-                key={i}
-                data-space-available={
-                  session.players.length === session["max-players"] &&
+            const sessionStatus =
+              session.players.length === session["max-players"] &&
+              session["scheduled-date"]
+                ? "full-scheduled"
+                : session.players.length === session["max-players"] &&
+                  !session["scheduled-date"]
+                ? "full-planning"
+                : session.players.length < session["max-players"] &&
                   session["scheduled-date"]
-                    ? "full-scheduled"
-                    : session.players.length === session["max-players"] &&
-                      !session["scheduled-date"]
-                    ? "full-planning"
-                    : session.players.length < session["max-players"] &&
-                      session["scheduled-date"]
-                    ? "space-available-scheduled"
-                    : "planning"
-                }
-              >
+                ? "space-available-scheduled"
+                : "planning";
+
+            const sessionAvailability =
+              session.players.length === session["max-players"];
+
+            console.log("space available: " + sessionAvailability);
+
+            const sessionPlanned = !!session["scheduled-date"];
+
+            console.log("planned: " + sessionPlanned);
+
+            return (
+              <tr key={i} data-session-planned={sessionPlanned}>
                 <td className="column name">{session.name}</td>
                 <td className="column dungeon-master">
                   {data.players.map((player) => {
@@ -108,41 +111,14 @@ function Sessions() {
                     ? session["discord-channel"]
                     : "TBD"}
                 </td>
+                <td className="column session-status">
+                  {sessionStatus.replace(/-/g, " ").toTitleCase()}
+                </td>
               </tr>
             );
           })}
         </tbody>
       </table>
-      <div className="table-key">
-        <div
-          className="key-item full-scheduled"
-          title="A session which is both full and has been scheduled"
-        >
-          <div className="key-colour-block"></div>
-          <div>Full - Scheduled</div>
-        </div>
-        <div
-          className="key-item full-planning"
-          title="A session which is both full but has not yet been scheduled"
-        >
-          <div className="key-colour-block"></div>
-          <div>Full - Planning</div>
-        </div>
-        <div
-          className="key-item space-available-scheduled"
-          title="A session which is not yet full but has been scheduled"
-        >
-          <div className="key-colour-block"></div>
-          <div>Spaces Available - Scheduled</div>
-        </div>
-        <div
-          className="key-item planning"
-          title="A session which is neither full nor has been scheduled"
-        >
-          <div className="key-colour-block"></div>
-          <div>Spaces Available - Planning</div>
-        </div>
-      </div>
     </span>
   );
 }
@@ -150,5 +126,11 @@ function Sessions() {
 function launchSuggestAdventurePopup() {
   ReactDOM.render(<Popup />, document.getElementById("popup-root"));
 }
+
+String.prototype.toTitleCase = function () {
+  return this.replace(/\w\S*/g, function (txt) {
+    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+  });
+};
 
 export default Sessions;

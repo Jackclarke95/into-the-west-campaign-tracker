@@ -84,22 +84,35 @@ form {
     }
     .button-container {
       display: inline-block;
-      button {
-        flex-grow: 1;
-        border: none;
-        padding: 6px 12px;
-        padding: 12px;
-        align-content: center;
-        font-size: large;
-        &:hover,
-        &:focus {
-          cursor: pointer;
-          outline: none;
-        }
-        &:hover {
-          background-color: darken(#efefef, 5%);
-        }
-      }
+    }
+  }
+}
+
+button {
+  flex-grow: 1;
+  border: none;
+  padding: 6px 12px;
+  padding: 12px;
+  align-content: center;
+  font-size: large;
+  background-color: #efefef;
+  &:hover,
+  &:focus {
+    cursor: pointer;
+    outline: none;
+  }
+  &:hover {
+    background-color: darken(#efefef, 5%);
+  }
+  &:disabled {
+    cursor: default;
+    &:hover,
+    &:focus {
+      cursor: default;
+      outline: none;
+    }
+    &:hover {
+      background-color: #efefef;
     }
   }
 }
@@ -123,5 +136,16 @@ table {
   }
   tbody tr:hover {
     background-color: darken(#fbfbfb, 15%);
+  }
+  tbody tr {
+    &:nth-child(2n-1) {
+      background-color: darken(#fbfbfb, 5%);
+      &:hover {
+        background-color: darken(#fbfbfb, 10%);
+      }
+    }
+    &:hover {
+      background-color: darken(#fbfbfb, 15%);
+    }
   }
 }

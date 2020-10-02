@@ -1,0 +1,27 @@
+.sessions-panel {
+  table {
+    td.column.name {
+      text-align: left;
+    }
+  }
+  .table-key {
+    margin-top: 1em;
+    margin-left: 1em;
+    margin-right: 1em;
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    .key-item {
+      display: flex;
+      align-items: center;
+      div {
+        cursor: default;
+      }
+      .key-colour-block {
+        height: 1em;
+        width: 1em;
+        margin-right: 0.5em;
+      }
+    }
+  }
+}
