@@ -4,11 +4,13 @@ import "./NextAdventure.scss";
 
 function NextAdventure() {
   const sessions = data.sessions
-    .sort((a, b) => {
-      const aDate = new Date(a["suggested-date"]);
-      const bDate = new Date(b["suggested-date"]);
-      return aDate - bDate;
-    })
+    // Remove sessions in the past
+    .filter(
+      (x) =>
+        new Date(x["scheduled-date"]) > new Date() ||
+        x["scheduled-date"] === undefined
+    )
+    // Order by scheduled date
     .sort((a, b) => {
       if (
         (a["scheduled-date"] && !b["scheduled-date"]) ||
@@ -33,8 +35,6 @@ function NextAdventure() {
   } else {
     message = "None scheduled";
   }
-
-  debugger;
 
   return (
     <span className="panel next-adventure">

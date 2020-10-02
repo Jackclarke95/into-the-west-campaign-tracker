@@ -56,7 +56,7 @@
       "race": "Elf",
       "subrace": "Wood",
       "classes": [{ "class": "Druid", "level": 6 }],
-      "session-count": 8,
+      "session-count": 9,
       "starting-level": 3
     },
     {
@@ -114,7 +114,7 @@
         { "class": "Bard", "level": 5 },
         { "class": "Warlock", "level": 1 }
       ],
-      "session-count": 0,
+      "session-count": 1,
       "starting-level": 6
     },
 
@@ -160,7 +160,7 @@
         { "class": "Ranger", "level": 4 },
         { "class": "Rogue", "level": 2 }
       ],
-      "session-count": 6,
+      "session-count": 7,
       "starting-level": 4
     },
     {
@@ -207,7 +207,7 @@
       "nickname": "Utredyn",
       "race": "Triton",
       "classes": [{ "class": "Barbarian", "level": 6 }],
-      "session-count": 1,
+      "session-count": 2,
       "starting-level": 5
     }
   ],

@@ -6,23 +6,27 @@ import "./Sessions.scss";
 
 function Sessions() {
   const sessions = data.sessions
+    // Remove sessions in the past
+    .filter(
+      (x) =>
+        new Date(x["scheduled-date"]) > new Date() ||
+        x["scheduled-date"] === undefined
+    )
+    // Order by suggested date
     .sort((a, b) => {
       const aDate = new Date(a["suggested-date"]);
       const bDate = new Date(b["suggested-date"]);
       return aDate - bDate;
     })
+    // Then order by scheduled date, retaining order by suggested date for unscheduled sessions
     .sort((a, b) => {
       if (
         (a["scheduled-date"] && !b["scheduled-date"]) ||
         (b["scheduled-date"] && !a["scheduled-date"])
-      ) {
+      )
         return -1;
-      }
 
-      return (
-        new Date(a["scheduled-date"] ? a["scheduled-date"] : 0) -
-        new Date(b["scheduled-date"] ? b["scheduled-date"] : 0)
-      );
+      return new Date(a["scheduled-date"]) - new Date(b["scheduled-date"]);
     });
 
   return (
