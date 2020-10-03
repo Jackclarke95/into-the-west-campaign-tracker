@@ -1,6 +1,6 @@
 import React from "react";
 import data from "../Data/Data.json";
-import "./Style/NextAdventure.scss";
+import "../Style/NextAdventure.scss";
 
 function NextAdventure() {
   const sessions = data.sessions

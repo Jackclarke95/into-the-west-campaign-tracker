@@ -1,8 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import data from "../Data/Data.json";
-import Popup from "./SuggestAdventurePopup.js";
-import "./Style/Sessions.scss";
+import "../Style/Sessions.scss";
+import SuggestAdventurePopup from "./SuggestAdventurePopup.js";
+import SignUpForSessionPopup from "./SignUpForSessionPopup";
 
 function Sessions() {
   const sessions = data.sessions
@@ -45,34 +46,21 @@ function Sessions() {
             <th className="column players">Players/Characters</th>
             <th className="column player-count">Player Count</th>
             <th className="column discord-channel">Discord Channel</th>
-            <th className="column status">Status</th>
+            <th className="column status">Sign Up</th>
           </tr>
         </thead>
         <tbody>
           {sessions.map((session, i) => {
-            const sessionStatus =
-              session.players.length === session["max-players"] &&
-              session["scheduled-date"]
-                ? "full-scheduled"
-                : session.players.length === session["max-players"] &&
-                  !session["scheduled-date"]
-                ? "full-planning"
-                : session.players.length < session["max-players"] &&
-                  session["scheduled-date"]
-                ? "space-available-scheduled"
-                : "planning";
-
-            const sessionAvailability =
+            const spaceAvailable =
               session.players.length === session["max-players"];
-
-            console.log("space available: " + sessionAvailability);
-
             const sessionPlanned = !!session["scheduled-date"];
 
-            console.log("planned: " + sessionPlanned);
-
             return (
-              <tr key={i} data-session-planned={sessionPlanned}>
+              <tr
+                key={i}
+                data-session-planned={sessionPlanned}
+                data-space-available={spaceAvailable}
+              >
                 <td className="column name">{session.name}</td>
                 <td className="column dungeon-master">
                   {data.players.map((player) => {
@@ -111,8 +99,15 @@ function Sessions() {
                     ? session["discord-channel"]
                     : "TBD"}
                 </td>
-                <td className="column session-status">
-                  {sessionStatus.replace(/-/g, " ").toTitleCase()}
+                <td className="column sign-up">
+                  <button
+                    className="button sign-up"
+                    disabled={spaceAvailable}
+                    title={spaceAvailable ? "Sorry, this session is full" : ""}
+                    onClick={() => launchSignUpForSessionPopup()}
+                  >
+                    Sign Up
+                  </button>
                 </td>
               </tr>
             );
@@ -124,13 +119,17 @@ function Sessions() {
 }
 
 function launchSuggestAdventurePopup() {
-  ReactDOM.render(<Popup />, document.getElementById("popup-root"));
+  ReactDOM.render(
+    <SuggestAdventurePopup />,
+    document.getElementById("popup-root")
+  );
 }
 
-String.prototype.toTitleCase = function () {
-  return this.replace(/\w\S*/g, function (txt) {
-    return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
-  });
-};
+function launchSignUpForSessionPopup() {
+  ReactDOM.render(
+    <SignUpForSessionPopup />,
+    document.getElementById("popup-root")
+  );
+}
 
 export default Sessions;

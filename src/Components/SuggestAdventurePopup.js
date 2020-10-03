@@ -1,6 +1,6 @@
 import React from "react";
 import Popup from "./Popup";
-import "./Style/SuggestAdventurePopup.scss";
+import "../Style/SuggestAdventurePopup.scss";
 
 function SuggestAdventurePopup() {
   return Popup("Suggest an Adventure!", suggestAdventureContent());

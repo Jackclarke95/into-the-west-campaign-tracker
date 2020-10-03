@@ -1,5 +1,5 @@
 import React from "react";
-import "./Style/Rules.scss";
+import "../Style/Rules.scss";
 
 function Rules() {
   return (

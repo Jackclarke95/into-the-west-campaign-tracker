@@ -1,5 +1,5 @@
 import React from "react";
-import "./Style/Links.scss";
+import "../Style/Links.scss";
 import data from "../Data/Data.json";
 
 function Links() {

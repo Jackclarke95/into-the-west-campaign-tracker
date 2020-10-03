@@ -1,6 +1,6 @@
 import React from "react";
 import data from "../Data/Data.json";
-import "./Style/Characters.scss";
+import "../Style/Characters.scss";
 
 function Characters() {
   const characters = data.characters.sort((a, b) => {

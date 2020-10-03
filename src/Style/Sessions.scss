@@ -4,6 +4,13 @@
       text-align: left;
     }
   }
+  tr td button {
+    font-size: inherit;
+    height: 30px;
+    padding: 0;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
   .table-key {
     margin-top: 1em;
     margin-left: 1em;

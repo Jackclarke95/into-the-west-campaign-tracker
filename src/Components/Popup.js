@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./Style/Popup.scss";
+import "../Style/Popup.scss";
 
 /**
  * Popup window component containing a title and content
