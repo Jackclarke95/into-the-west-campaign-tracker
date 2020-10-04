@@ -4,8 +4,8 @@ import "../Style/Characters.scss";
 
 function Characters() {
   const characters = data.characters.sort((a, b) => {
-    a = a.nickname ? a.nickname : a.name;
-    b = b.nickname ? b.nickname : b.name;
+    a = a.nickname ?? a.name;
+    b = b.nickname ?? b.name;
     return a < b ? -1 : a > b ? 1 : 0;
   });
 
