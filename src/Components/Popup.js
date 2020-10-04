@@ -7,13 +7,18 @@ import "../Style/Popup.scss";
  *
  * @param {string} title The title for the popup window
  * @param {string} content The content elements of the popup window
+ * @param {string} className The class name for the popup window
  *
  * @returns A popup window with the parameters
  */
-function Popup(title, content) {
+function Popup(title, content, className) {
   return (
     <div id="popup-overlay" onClick={() => dismissPopup()}>
-      <div id="popup-window" onClick={(e) => e.stopPropagation()}>
+      <div
+        id="popup-window"
+        className={className}
+        onClick={(e) => e.stopPropagation()}
+      >
         <div className="dismiss-button" onClick={() => dismissPopup()}>
           +
         </div>

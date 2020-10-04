@@ -3,7 +3,11 @@ import Popup from "./Popup";
 import "../Style/SuggestAdventurePopup.scss";
 
 function SuggestAdventurePopup() {
-  return Popup("Suggest an Adventure!", suggestAdventureContent());
+  return Popup(
+    "Suggest an Adventure!",
+    suggestAdventureContent(),
+    "suggest-adventure-popup"
+  );
 }
 
 function suggestAdventureContent() {

@@ -1,9 +1,13 @@
 import React from "react";
 import Popup from "./Popup";
-import "../Style/SuggestAdventurePopup.scss";
+import "../Style/SignUpForSessionPopup.scss";
 
 function SignUpForSessionPopup() {
-  return Popup("Suggest an Adventure!", SignUpForSessionContent());
+  return Popup(
+    "Suggest an Adventure!",
+    SignUpForSessionContent(),
+    "sign-up-for-session-popup"
+  );
 }
 
 function SignUpForSessionContent() {
@@ -24,25 +28,7 @@ function SignUpForSessionContent() {
           type="text"
           required="required"
         />
-        <>{renderDateBoxes()}</>
-        <input
-          type="checkbox"
-          id="date-2"
-          name="date-2"
-          value={new Date(today.setDate(today.getDate() + 2)).toLocaleString(
-            "en-GB"
-          )}
-        />
-        <label htmlFor="date-2">
-          {`${new Date(
-            today.setDate(today.getDate() + 2)
-          ).toLocaleString("en-GB", { weekday: "long" })}
-          ${" - "}   
-          ${new Date(today.setDate(today.getDate() + 2)).toLocaleString(
-            "en-GB",
-            { year: "numeric", month: "numeric", day: "numeric" }
-          )}`}
-        </label>
+        <div className="date-selection-container">{renderDateBoxes()}</div>
         <input type="submit" />
       </form>
     </>
@@ -55,23 +41,33 @@ function renderDateBoxes() {
   var i = 1;
   const today = new Date();
 
-  var dateList;
+  var dateList = [];
 
   for (i; i < 15; i++) {
-    dateList += (
-      <>
+    const date = new Date(today.setDate(today.getDate() + i));
+
+    dateList.push(
+      <div className="date-option-container">
         <input
+          key={i}
           type="checkbox"
-          id="date-1"
-          name="date-1"
-          value={new Date(today.setDate(today.getDate() + i)).toLocaleString(
-            "en-GB"
-          )}
+          id={`date-${i}`}
+          name={`date-${i}`}
+          value={date.toLocaleString("en-GB", {
+            day: "numeric",
+            month: "numeric",
+            year: "numeric",
+          })}
         />
-        <label htmlFor="date-1">
-          {new Date(today.setDate(today.getDate() + i)).toLocaleString("en-GB")}
+        <label htmlFor={`date-${i}`}>
+          {date.toLocaleString("en-GB", {
+            weekday: "long",
+            day: "numeric",
+            month: "numeric",
+            year: "numeric",
+          })}
         </label>
-      </>
+      </div>
     );
   }
 

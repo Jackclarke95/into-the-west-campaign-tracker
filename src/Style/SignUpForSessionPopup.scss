@@ -1,0 +1,19 @@
+.sign-up-for-session-popup {
+  .date-selection-container {
+    display: block;
+    margin-top: 1em;
+    .date-option-container {
+      margin-bottom: 1em;
+      display: inline-flex;
+      flex-basis: 0;
+      flex-grow: 1;
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+      label {
+        text-align: right;
+        margin-left: 0;
+      }
+    }
+  }
+}
