@@ -1,5 +1,5 @@
-import React from "react";
-import data from "../Data/Data.json";
+import * as React from "react";
+import * as data from "../Data/Data.json";
 import "../Style/NextAdventure.scss";
 
 function NextAdventure() {
@@ -14,7 +14,10 @@ function NextAdventure() {
       if (a["scheduled-date"] ? !b["scheduled-date"] : b["scheduled-date"])
         return -1;
 
-      return new Date(a["scheduled-date"]) - new Date(b["scheduled-date"]);
+      return (
+        new Date(a["scheduled-date"]).getTime() -
+        new Date(b["scheduled-date"]).getTime()
+      );
     });
 
   const nextSession = sessions[0];

@@ -1,6 +1,6 @@
-import React from "react";
+import * as React from "react";
 import "../Style/Links.scss";
-import data from "../Data/Data.json";
+import * as data from "../Data/Data.json";
 
 function Links() {
   return (
@@ -15,7 +15,11 @@ function Links() {
                 {linkGroup.links.map((link, j) => {
                   return (
                     <li key={j}>
-                      <a rel="noopener noreferrer" target="_blank" href={link.url}>
+                      <a
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        href={link.url}
+                      >
                         {link.name}
                       </a>
                     </li>

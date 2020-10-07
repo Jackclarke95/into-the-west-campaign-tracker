@@ -1,12 +1,16 @@
-import React from "react";
-import data from "../Data/Data.json";
+import * as React from "react";
+import * as data from "../Data/Data.json";
 import "../Style/Characters.scss";
 
 function Characters() {
   const characters = data.characters.sort((a, b) => {
-    a = a.nickname ?? a.name;
-    b = b.nickname ?? b.name;
-    return a < b ? -1 : a > b ? 1 : 0;
+    const aNameToCompare = a.nickname ?? a.name;
+    const bNameToCompare = b.nickname ?? b.name;
+    return aNameToCompare < bNameToCompare
+      ? -1
+      : aNameToCompare > bNameToCompare
+      ? 1
+      : 0;
   });
 
   return (
@@ -68,7 +72,10 @@ function Characters() {
                   {formatClasses(character.classes)}
                 </td>
                 <td className="column current-level">
-                  {calculateLevelFromClasses(character.classes)}
+                  {calculateLevelFromSessions(
+                    character["starting-level"],
+                    character["session-count"]
+                  )}
                 </td>
                 <td className="column starting-level">
                   {character["starting-level"]}
@@ -183,8 +190,8 @@ function calculateRemainingSessionsForLevelUp(startingLevel, sessionCount) {
  *
  * @returns {number} The number of sessions required for this level
  */
-function calculateTotalSessionsToNextLevel(level) {
-  return parseInt(level / 6) + 2;
+function calculateTotalSessionsToNextLevel(level: number) {
+  return Math.trunc(level / 6 + 2);
 }
 
 /**
@@ -196,6 +203,7 @@ function calculateTotalSessionsToNextLevel(level) {
  * @returns {number} The character's level
  */
 function calculateLevelFromSessions(startingLevel, sessionCount) {
+  debugger;
   var currentLevel = startingLevel;
   var remainingSessions = sessionCount;
   var sessionsToLevel = calculateTotalSessionsToNextLevel(currentLevel + 1);

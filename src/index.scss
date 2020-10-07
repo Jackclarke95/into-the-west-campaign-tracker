@@ -106,6 +106,7 @@ button {
   }
   &:disabled {
     background-color: white;
+    color: #888;
     cursor: not-allowed;
     &:hover,
     &:focus {

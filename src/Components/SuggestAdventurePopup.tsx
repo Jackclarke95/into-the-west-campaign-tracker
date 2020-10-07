@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import Popup from "./Popup";
 import "../Style/SuggestAdventurePopup.scss";
 
@@ -26,7 +26,7 @@ function suggestAdventureContent() {
               id="adventure-name"
               name="adventure-name"
               type="text"
-              required="required"
+              required={true}
             />
           </div>
           <div className="max-players">
@@ -53,9 +53,8 @@ function suggestAdventureContent() {
           <textarea
             id="adventure-description"
             name="adventure-description"
-            type="text"
             required
-            rows="20"
+            rows={20}
           />
         </div>
         <input type="submit" />

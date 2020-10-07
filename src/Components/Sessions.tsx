@@ -1,8 +1,8 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import data from "../Data/Data.json";
+import * as React from "react";
+import * as ReactDOM from "react-dom";
+import * as data from "../Data/Data.json";
 import "../Style/Sessions.scss";
-import SuggestAdventurePopup from "./SuggestAdventurePopup.js";
+import SuggestAdventurePopup from "./SuggestAdventurePopup";
 import SignUpForSessionPopup from "./SignUpForSessionPopup";
 
 function Sessions() {
@@ -15,14 +15,20 @@ function Sessions() {
     )
     // Order by suggested date
     .sort((a, b) => {
-      return new Date(a["suggested-date"]) - new Date(b["suggested-date"]);
+      return (
+        new Date(a["suggested-date"]).getTime() -
+        new Date(b["suggested-date"]).getTime()
+      );
     })
     // Then order by scheduled date, retaining order by suggested date for unscheduled sessions
     .sort((a, b) => {
       if (a["scheduled-date"] ? !b["scheduled-date"] : b["scheduled-date"])
         return -1;
 
-      return new Date(a["scheduled-date"]) - new Date(b["scheduled-date"]);
+      return (
+        new Date(a["scheduled-date"]).getTime() -
+        new Date(b["scheduled-date"]).getTime()
+      );
     });
 
   return (

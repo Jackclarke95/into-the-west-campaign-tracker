@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import Popup from "./Popup";
 import "../Style/SignUpForSessionPopup.scss";
 
@@ -26,7 +26,7 @@ function SignUpForSessionContent() {
           id="character-name"
           name="character-name"
           type="text"
-          required="required"
+          required={true}
         />
         <div className="date-selection-container">{renderDateBoxes()}</div>
         <input type="submit" />
