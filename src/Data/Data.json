@@ -12,7 +12,7 @@
         { "class": "Barbarian", "level": 1 }
       ],
       "starting-level": 6,
-      "session-count": 2,
+      "session-count": 3,
       "next-session": "01/10/20"
     },
     {
@@ -76,7 +76,8 @@
       "avatar-link": "13124/972/1581111423-34189033.jpeg",
       "name": "Inquisitor Lynchmire",
       "nickname": "Lynchmire",
-      "race": "Half-elf (Drow)",
+      "race": "Half-elf",
+      "subrace": "Drow",
       "classes": [{ "class": "Warlock", "level": 6 }],
       "session-count": 1,
       "starting-level": 6
