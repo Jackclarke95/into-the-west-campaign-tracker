@@ -6,6 +6,7 @@ function Characters() {
   const characters = data.characters.sort((a, b) => {
     const aNameToCompare = a.nickname ?? a.name;
     const bNameToCompare = b.nickname ?? b.name;
+    
     return aNameToCompare < bNameToCompare
       ? -1
       : aNameToCompare > bNameToCompare

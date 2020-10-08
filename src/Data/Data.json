@@ -44,7 +44,7 @@
       "name": "Big Percy",
       "race": "Half-orc",
       "classes": [{ "class": "Fighter", "level": 8 }],
-      "session-count": 13,
+      "session-count": 14,
       "starting-level": 3
     },
     {
@@ -71,6 +71,17 @@
       "starting-level": 6
     },
     {
+      "id": 34189033,
+      "player-dndbeyond-name": "Proxysaurus",
+      "avatar-link": "13124/972/1581111423-34189033.jpeg",
+      "name": "Inquisitor Lynchmire",
+      "nickname": "Lynchmire",
+      "race": "Half-elf (Drow)",
+      "classes": [{ "class": "Warlock", "level": 6 }],
+      "session-count": 1,
+      "starting-level": 6
+    },
+    {
       "id": 33132303,
       "player-dndbeyond-name": "BlackRoseSarah89",
       "avatar-link": "11957/368/1581111423-33132303.jpeg",
@@ -88,7 +99,7 @@
       "name": "Grimshroom",
       "race": "Goblin",
       "classes": [{ "class": "Druid", "level": 6 }],
-      "session-count": 0,
+      "session-count": 1,
       "starting-level": 6
     },
     {
@@ -145,7 +156,7 @@
       "nickname": "Zak",
       "race": "Goliath",
       "classes": [{ "class": "Paladin", "level": 8 }],
-      "session-count": 13,
+      "session-count": 14,
       "starting-level": 3
     },
     {
