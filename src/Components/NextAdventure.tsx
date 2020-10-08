@@ -24,7 +24,9 @@ function NextAdventure() {
   var message = nextSession["scheduled-date"]
     ? `${nextSession.name} | Scheduled: ${new Date(
         nextSession["scheduled-date"]
-      ).toLocaleDateString("en-GB")}`
+      ).toLocaleDateString("en-GB")} | Dungeon Master: ${
+        nextSession["dungeon-master"]
+      }`
     : "None scheduled";
 
   return (

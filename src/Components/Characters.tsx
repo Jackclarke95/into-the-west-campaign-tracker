@@ -146,23 +146,6 @@ function formatClasses(classes) {
 }
 
 /**
- * Calculates the character's current level from an array of classes
- *
- * @param {{string, number}[]} classes The classes the character has
- *
- * @returns {number} The character's level
- */
-function calculateLevelFromClasses(classes) {
-  var totalLevel = 0;
-
-  classes.forEach((c) => {
-    totalLevel += c.level;
-  });
-
-  return totalLevel;
-}
-
-/**
  * Calculates the remaining number of sessions a character must attend before levelling up
  *
  * @param {number} startingLevel The level that at which the character was created

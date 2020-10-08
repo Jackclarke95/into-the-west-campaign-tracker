@@ -11,8 +11,6 @@ function SignUpForSessionPopup() {
 }
 
 function SignUpForSessionContent() {
-  const today = new Date();
-
   return (
     <>
       <form>
