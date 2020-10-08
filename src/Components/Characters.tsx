@@ -6,7 +6,7 @@ function Characters() {
   const characters = data.characters.sort((a, b) => {
     const aNameToCompare = a.nickname ?? a.name;
     const bNameToCompare = b.nickname ?? b.name;
-    
+
     return aNameToCompare < bNameToCompare
       ? -1
       : aNameToCompare > bNameToCompare
@@ -204,7 +204,6 @@ function calculateTotalSessionsToNextLevel(level: number) {
  * @returns {number} The character's level
  */
 function calculateLevelFromSessions(startingLevel, sessionCount) {
-  debugger;
   var currentLevel = startingLevel;
   var remainingSessions = sessionCount;
   var sessionsToLevel = calculateTotalSessionsToNextLevel(currentLevel + 1);
