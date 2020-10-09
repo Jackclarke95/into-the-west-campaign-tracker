@@ -8,6 +8,16 @@ import Rules from "./Components/Rules";
 import NextAdventure from "./Components/NextAdventure";
 import DeploymentDate from "./Components/DeploymentDate";
 import Data from "./Data/Data";
+import * as DataHelper from "./Data/DataHelper";
+
+let liveData = DataHelper.fetchAllData();
+let characters = DataHelper.fetchCharacters();
+let sessions = DataHelper.fetchSessions();
+let players = DataHelper.fetchPlayers();
+let links = DataHelper.fetchLinks();
+
+console.log(Data.sessions);
+console.log(sessions);
 
 ReactDOM.render(
   <React.StrictMode>
