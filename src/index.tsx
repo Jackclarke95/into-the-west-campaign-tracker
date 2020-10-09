@@ -7,17 +7,18 @@ import Links from "./Components/Links";
 import Rules from "./Components/Rules";
 import NextAdventure from "./Components/NextAdventure";
 import DeploymentDate from "./Components/DeploymentDate";
+import Data from "./Data/Data";
 
 ReactDOM.render(
   <React.StrictMode>
     <h1>Into The West Campaign Tracker</h1>
-    <NextAdventure />
+    <NextAdventure sessions={Data.sessions} />
     <div className="info">
-      <Links />
+      <Links linkGroups={Data["link-groups"]} />
       <Rules />
     </div>
-    <Characters />
-    <Sessions />
+    <Characters characters={Data.characters} players={Data.players} />
+    <Sessions sessions={Data.sessions} players={Data.players} />
     {/* TODO: Graveyard */}
     {/* TODO: Player shop */}
     <DeploymentDate />

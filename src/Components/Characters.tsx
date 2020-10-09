@@ -1,9 +1,10 @@
 import * as React from "react";
-import * as data from "../Data/Data.json";
 import "../Style/Characters.scss";
 
-function Characters() {
-  const characters = data.characters.sort((a, b) => {
+const Characters = (props) => {
+  const players = props.players;
+
+  const characters = props.characters.sort((a, b) => {
     const aNameToCompare = a.nickname ?? a.name;
     const bNameToCompare = b.nickname ?? b.name;
 
@@ -99,7 +100,7 @@ function Characters() {
                     : "N/A"}
                 </td>
                 <td className="column test-data">
-                  {data.players.map((player) => {
+                  {players.map((player) => {
                     if (
                       player["dndbeyond-name"] ===
                       character["player-dndbeyond-name"]
@@ -125,7 +126,7 @@ function Characters() {
       </table>
     </div>
   );
-}
+};
 
 /**
  * Formats the classes a character has based on the array of its classes

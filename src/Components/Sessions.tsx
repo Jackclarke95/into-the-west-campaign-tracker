@@ -1,12 +1,13 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import * as data from "../Data/Data.json";
 import "../Style/Sessions.scss";
 import SuggestAdventurePopup from "./SuggestAdventurePopup";
 import SignUpForSessionPopup from "./SignUpForSessionPopup";
 
-function Sessions() {
-  const sessions = data.sessions
+const Sessions = (props) => {
+  const players = props.players;
+
+  const sessions = props.sessions
     // Remove sessions in the past
     .filter(
       (x) =>
@@ -69,7 +70,7 @@ function Sessions() {
               >
                 <td className="column name">{session.name}</td>
                 <td className="column dungeon-master">
-                  {data.players.map((player) => {
+                  {players.map((player) => {
                     if (
                       player["dndbeyond-name"] === session["dungeon-master"]
                     ) {
@@ -122,7 +123,7 @@ function Sessions() {
       </table>
     </span>
   );
-}
+};
 
 function launchSuggestAdventurePopup() {
   ReactDOM.render(

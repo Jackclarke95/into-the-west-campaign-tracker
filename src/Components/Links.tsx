@@ -1,13 +1,13 @@
 import * as React from "react";
 import "../Style/Links.scss";
-import * as data from "../Data/Data.json";
 
-function Links() {
+const Links = (props) => {
+  const linkGroups = props.linkGroups;
   return (
     <span className="panel links-panel">
       <h2>Links</h2>
       <div className="link-lists">
-        {data["link-groups"].map((linkGroup, i) => {
+        {linkGroups.map((linkGroup, i) => {
           return (
             <div key={i}>
               <h3>{linkGroup.name}</h3>
@@ -32,6 +32,6 @@ function Links() {
       </div>
     </span>
   );
-}
+};
 
 export default Links;

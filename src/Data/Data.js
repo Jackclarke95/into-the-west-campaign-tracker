@@ -1,4 +1,4 @@
-{
+const Data = {
   "characters": [
     {
       "id": 34044602,
@@ -401,3 +401,5 @@
     }
   ]
 }
+
+export default Data;

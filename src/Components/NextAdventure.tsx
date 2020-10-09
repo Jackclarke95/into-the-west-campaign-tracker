@@ -1,9 +1,8 @@
 import * as React from "react";
-import * as data from "../Data/Data.json";
 import "../Style/NextAdventure.scss";
 
-function NextAdventure() {
-  const sessions = data.sessions
+const NextAdventure = (props) => {
+  const sessions = props.sessions
     .filter(
       (x) =>
         new Date(x["scheduled-date"]) > new Date() ||
@@ -35,6 +34,6 @@ function NextAdventure() {
       {message}
     </span>
   );
-}
+};
 
 export default NextAdventure;
