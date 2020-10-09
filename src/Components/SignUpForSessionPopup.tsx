@@ -69,8 +69,6 @@ function renderDateBoxes() {
     );
   }
 
-  console.log(dateList);
-
   return dateList;
 }
 
