@@ -3,6 +3,7 @@ import "../Style/Characters.scss";
 
 const Characters = (props) => {
   const players = props.players;
+  const sessions = props.sessions;
 
   const characters = props.characters.sort((a, b) => {
     const aNameToCompare = a.nickname ?? a.name;
@@ -83,10 +84,7 @@ const Characters = (props) => {
                   {character["starting-level"]}
                 </td>
                 <td className="column session-count">
-                  {
-                    //TODO: Calculate this automatically
-                    character["session-count"]
-                  }
+                  {countSessionsAttended(character, sessions)}
                 </td>
                 <td className="column sessions-to-level-up">
                   {calculateRemainingSessionsForLevelUp(
@@ -127,6 +125,23 @@ const Characters = (props) => {
     </div>
   );
 };
+
+function countSessionsAttended(character, sessions) {
+  var matchingSessions = [];
+
+  sessions.map((session) => {
+    if (
+      session.players.includes(character.id) &&
+      new Date(session["scheduled-date"]) < new Date()
+    ) {
+      matchingSessions.push(session);
+    }
+  });
+
+  debugger;
+
+  return matchingSessions.length;
+}
 
 /**
  * Formats the classes a character has based on the array of its classes

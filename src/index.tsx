@@ -27,7 +27,11 @@ ReactDOM.render(
       <Links linkGroups={Data["link-groups"]} />
       <Rules />
     </div>
-    <Characters characters={Data.characters} players={Data.players} />
+    <Characters
+      sessions={Data.sessions}
+      characters={Data.characters}
+      players={Data.players}
+    />
     <Sessions
       sessions={Data.sessions}
       players={Data.players}

@@ -35,7 +35,7 @@ const Data = {
       subrace: "High",
       classes: [{ class: "Rogue", level: 5 }],
       "starting-level": 3,
-      "session-count": 5,
+      "session-count": 4,
     },
     {
       id: 26119200,
@@ -136,7 +136,7 @@ const Data = {
       name: "Lorenz",
       race: "Tiefling",
       classes: [{ class: "Sorcerer", level: 6 }],
-      "session-count": 9,
+      "session-count": 10,
       "starting-level": 3,
     },
     {
@@ -346,7 +346,7 @@ const Data = {
       name: "Bright Eyes Bart",
       "dungeon-master": "FreemDeem",
       "scheduled-date": "2020 08 24",
-      players: [34044602, 3, 34185467, 34130081, 26109480],
+      players: [34044602, 3, 34185467, 34130081, 26109480, 26133759],
     },
     {
       name: "Ruined Tower",
