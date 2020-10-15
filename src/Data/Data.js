@@ -246,7 +246,6 @@ const Data = {
       "name": "Mumsy's Extra Planar Adventures",
       "dungeon-master": "SunRester",
       "suggested-by": "Dave",
-      "suggested-date": "2020 09 01",
       "players": ["Arthur", "Big Percy", "Esyln", "Qiharice"],
       "max-players": 5
     },

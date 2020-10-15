@@ -29,7 +29,7 @@ const NextAdventure = (props) => {
     : "None scheduled";
 
   return (
-    <span className="panel next-adventure">
+    <span className="panel next-adventure-panel">
       <b>Next Adventure: </b>
       {message}
     </span>

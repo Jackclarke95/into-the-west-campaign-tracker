@@ -86,9 +86,11 @@ const Sessions = (props) => {
                   {session["suggested-by"]}
                 </td>
                 <td className="column suggested-date">
-                  {new Date(session["suggested-date"]).toLocaleDateString(
-                    "en-GB"
-                  )}
+                  {session["suggested-date"]
+                    ? new Date(session["suggested-date"]).toLocaleDateString(
+                        "en-GB"
+                      )
+                    : "N/A"}
                 </td>
                 <td className="column date">
                   {session["scheduled-date"]
