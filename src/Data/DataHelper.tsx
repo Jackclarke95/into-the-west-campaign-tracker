@@ -39,7 +39,7 @@ function fetchData(element = undefined) {
     .ref(element)
     .on("value", (snapshot) => {
       snapshot.forEach((snap) => {
-        console.log(`data: `, snap.val());
+        //console.log(`data: `, snap.val());
         data.push(snap.val());
       });
     });

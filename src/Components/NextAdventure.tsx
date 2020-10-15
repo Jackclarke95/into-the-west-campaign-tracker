@@ -2,11 +2,13 @@ import * as React from "react";
 import "../Style/NextAdventure.scss";
 
 const NextAdventure = (props) => {
+  const players = props.players;
+
   const sessions = props.sessions
     .filter(
       (x) =>
-        new Date(x["scheduled-date"]) > new Date() ||
-        x["scheduled-date"] === undefined
+        new Date(x["scheduled-date"]) > new Date() &&
+        x["scheduled-date"] !== undefined
     )
     // Order by scheduled date
     .sort((a, b) => {
@@ -19,12 +21,17 @@ const NextAdventure = (props) => {
       );
     });
 
+  sessions.map((s) => {
+    console.log(s);
+    console.log(s["scheduled-date"]);
+  });
+
   const nextSession = sessions[0];
   var message = nextSession["scheduled-date"]
     ? `${nextSession.name} | Scheduled: ${new Date(
         nextSession["scheduled-date"]
       ).toLocaleDateString("en-GB")} | Dungeon Master: ${
-        nextSession["dungeon-master"]
+        players.find((p) => p["dndbeyond-name"] === nextSession["dungeon-master"]).name
       }`
     : "None scheduled";
 

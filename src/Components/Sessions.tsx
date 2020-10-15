@@ -6,6 +6,7 @@ import SignUpForSessionPopup from "./SignUpForSessionPopup";
 
 const Sessions = (props) => {
   const players = props.players;
+  const characters = props.characters;
 
   const sessions = props.sessions
     // Remove sessions in the past
@@ -83,7 +84,15 @@ const Sessions = (props) => {
                   })}
                 </td>
                 <td className="column suggested-by">
-                  {session["suggested-by"]}
+                  {players.map((player) => {
+                    if (player["dndbeyond-name"] === session["suggested-by"]) {
+                      return player["screen-name"]
+                        ? player["screen-name"]
+                        : player["name"];
+                    }
+
+                    return null;
+                  })}
                 </td>
                 <td className="column suggested-date">
                   {session["suggested-date"]
@@ -99,7 +108,9 @@ const Sessions = (props) => {
                       )
                     : "TBD"}
                 </td>
-                <td className="column players">{session.players.join(", ")}</td>
+                <td className="column players">
+                  {getCharactersFromSession(session.players, characters)}
+                </td>
                 <td className="column player-count">
                   {session.players.length}/{session["max-players"]}
                 </td>
@@ -126,6 +137,26 @@ const Sessions = (props) => {
     </span>
   );
 };
+
+function getCharacterNameFromId(id: number, allCharacters) {
+  var matchingPlayer = allCharacters.find((p) => p.id === id);
+
+  var name = matchingPlayer.nickname
+    ? matchingPlayer.nickname
+    : matchingPlayer.name;
+
+  return name;
+}
+
+function getCharactersFromSession(playerIds, allCharacters) {
+  var playerList = [];
+
+  playerIds.map((id) => {
+    playerList.push(getCharacterNameFromId(id, allCharacters));
+  });
+
+  return playerList.sort().join(", ");
+}
 
 function launchSuggestAdventurePopup() {
   ReactDOM.render(

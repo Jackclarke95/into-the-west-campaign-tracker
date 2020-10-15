@@ -16,19 +16,23 @@ let sessions = DataHelper.fetchSessions();
 let players = DataHelper.fetchPlayers();
 let links = DataHelper.fetchLinks();
 
-console.log(Data.sessions);
-console.log(sessions);
+// console.log(Data.sessions);
+// console.log(sessions);
 
 ReactDOM.render(
   <React.StrictMode>
     <h1>Into The West Campaign Tracker</h1>
-    <NextAdventure sessions={Data.sessions} />
+    <NextAdventure sessions={Data.sessions} players={Data.players} />
     <div className="info">
       <Links linkGroups={Data["link-groups"]} />
       <Rules />
     </div>
     <Characters characters={Data.characters} players={Data.players} />
-    <Sessions sessions={Data.sessions} players={Data.players} />
+    <Sessions
+      sessions={Data.sessions}
+      players={Data.players}
+      characters={Data.characters}
+    />
     {/* TODO: Graveyard */}
     {/* TODO: Player shop */}
     <DeploymentDate />
