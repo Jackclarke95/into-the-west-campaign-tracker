@@ -515,6 +515,7 @@ const Data = {
       name: "Jack",
       "dndbeyond-name": "FreemDeem",
       "screen-name": "JBC",
+      "dungeon-master": true,
     },
     {
       name: "Lewis",
@@ -523,6 +524,7 @@ const Data = {
     {
       name: "Dave",
       "dndbeyond-name": "SunRester",
+      "dungeon-master": true,
     },
     {
       name: "Rowan",
@@ -535,6 +537,7 @@ const Data = {
     {
       name: "Jack",
       "dndbeyond-name": "JackClarke",
+      "dungeon-master": true,
     },
     {
       name: "Sarah",
@@ -544,6 +547,7 @@ const Data = {
       name: "Louis",
       "dndbeyond-name": "SchemingPnda",
       "screen-name": "Louis",
+      "dungeon-master": true,
     },
     {
       name: "Kosky",
@@ -552,6 +556,7 @@ const Data = {
     {
       name: "Benjy",
       "dndbeyond-name": "Benjywa",
+      "dungeon-master": true,
     },
     {
       name: "Otis",

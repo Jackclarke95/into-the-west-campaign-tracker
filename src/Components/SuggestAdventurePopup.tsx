@@ -2,15 +2,33 @@ import * as React from "react";
 import Popup from "./Popup";
 import "../Style/SuggestAdventurePopup.scss";
 
-function SuggestAdventurePopup() {
+const SuggestAdventurePopup = (props) => {
+  let dungeonMasters = props.players.filter(
+    (p) => p["dungeon-master"] === true
+  );
+
+  let dmNames = [];
+
+  dungeonMasters.map((dm) => {
+    dmNames.push(dm["screen-name"] ?? dm.name);
+  });
+
+  // Sort names alphabetically, case-insensitive
+  dmNames.sort((a, b) => {
+    a = a.toLowerCase();
+    b = b.toLowerCase();
+    if (a == b) return 0;
+    return a < b ? -1 : 1;
+  });
+
   return Popup(
     "Suggest an Adventure!",
-    suggestAdventureContent(),
+    suggestAdventureContent(dmNames),
     "suggest-adventure-popup"
   );
-}
+};
 
-function suggestAdventureContent() {
+function suggestAdventureContent(dungeonMasters) {
   return (
     <>
       <form>
@@ -39,11 +57,9 @@ function suggestAdventureContent() {
             <label htmlFor="name">Dungeon Master</label>
             <select id="dungeon-master" name="dungeon-master">
               <option value="no-dm">None/Not Sure</option>
-              <option value="dave">Benjy</option>
-              <option value="dave">Dave</option>
-              <option value="jack">Jack</option>
-              <option value="jbc">JBC</option>
-              <option value="louis">Louis</option>
+              {dungeonMasters.map((dm) => {
+                return <option value="dave">{dm}</option>;
+              })}
             </select>
           </div>
         </div>

@@ -38,7 +38,7 @@ const Sessions = (props) => {
       <div className="header-and-button">
         <h2>Planned Adventures</h2>
         <div className="button-container">
-          <button onClick={() => launchSuggestAdventurePopup()}>
+          <button onClick={() => launchSuggestAdventurePopup(players)}>
             Suggest Adventure
           </button>
         </div>
@@ -158,9 +158,9 @@ function getCharactersFromSession(playerIds, allCharacters) {
   return playerList.sort().join(", ");
 }
 
-function launchSuggestAdventurePopup() {
+function launchSuggestAdventurePopup(players) {
   ReactDOM.render(
-    <SuggestAdventurePopup />,
+    <SuggestAdventurePopup players={players} />,
     document.getElementById("popup-root")
   );
 }
