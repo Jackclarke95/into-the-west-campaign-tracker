@@ -4,7 +4,7 @@ import "../Style/SignUpForSessionPopup.scss";
 
 function SignUpForSessionPopup() {
   return Popup(
-    "Suggest an Adventure!",
+    "Sign Up for Session!",
     SignUpForSessionContent(),
     "sign-up-for-session-popup"
   );
