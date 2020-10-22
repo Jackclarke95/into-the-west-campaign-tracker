@@ -25,7 +25,7 @@ const Sessions = (props) => {
     // Then order by scheduled date, retaining order by suggested date for unscheduled sessions
     .sort((a, b) => {
       if (a["scheduled-date"] ? !b["scheduled-date"] : b["scheduled-date"])
-        return -1;
+        return 1;
 
       return (
         new Date(a["scheduled-date"]).getTime() -

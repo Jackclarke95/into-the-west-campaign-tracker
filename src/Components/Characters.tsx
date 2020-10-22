@@ -51,7 +51,6 @@ const Characters = (props) => {
                 <td className="column name">
                   <img
                     src={`https://www.dndbeyond.com/avatars/${character["avatar-link"]}`}
-                    alt={`${character.nickname} avatar`}
                   />
                   <a
                     className="character-name"
