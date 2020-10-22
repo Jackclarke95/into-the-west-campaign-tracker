@@ -77,7 +77,7 @@ const Characters = (props) => {
                 <td className="column current-level">
                   {calculateLevelFromSessions(
                     character["starting-level"],
-                    character["session-count"]
+                    countSessionsAttended(character, sessions)
                   )}
                 </td>
                 <td className="column starting-level">
@@ -89,7 +89,7 @@ const Characters = (props) => {
                 <td className="column sessions-to-level-up">
                   {calculateRemainingSessionsForLevelUp(
                     character["starting-level"],
-                    character["session-count"]
+                    countSessionsAttended(character, sessions)
                   )}
                 </td>
                 <td className="column next-session">
@@ -137,6 +137,10 @@ function countSessionsAttended(character, sessions) {
       matchingSessions.push(session);
     }
   });
+
+  if (character.nickname === "Chaia") {
+    console.log(matchingSessions);
+  }
 
   debugger;
 

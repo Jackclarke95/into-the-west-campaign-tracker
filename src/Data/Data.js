@@ -12,7 +12,6 @@ const Data = {
         { class: "Barbarian", level: 1 },
       ],
       "starting-level": 6,
-      "session-count": 3,
       "next-session": "01/10/20",
     },
     {
@@ -22,7 +21,6 @@ const Data = {
       name: "Babel",
       race: "Kenku",
       classes: [{ class: "Artificer", level: 7 }],
-      "session-count": 12,
       "starting-level": 3,
     },
     {
@@ -35,7 +33,6 @@ const Data = {
       subrace: "High",
       classes: [{ class: "Rogue", level: 5 }],
       "starting-level": 3,
-      "session-count": 4,
     },
     {
       id: 26119200,
@@ -44,7 +41,6 @@ const Data = {
       name: "Big Percy",
       race: "Half-orc",
       classes: [{ class: "Fighter", level: 8 }],
-      "session-count": 14,
       "starting-level": 3,
     },
     {
@@ -56,7 +52,6 @@ const Data = {
       race: "Elf",
       subrace: "Wood",
       classes: [{ class: "Druid", level: 6 }],
-      "session-count": 9,
       "starting-level": 3,
     },
     {
@@ -67,7 +62,6 @@ const Data = {
       nickname: "Eslyn",
       race: "Triton",
       classes: [{ class: "Sorcerer", level: 6 }],
-      "session-count": 1,
       "starting-level": 6,
     },
     {
@@ -79,7 +73,6 @@ const Data = {
       race: "Half-elf",
       subrace: "Drow",
       classes: [{ class: "Warlock", level: 6 }],
-      "session-count": 1,
       "starting-level": 6,
     },
     {
@@ -90,7 +83,6 @@ const Data = {
       race: "Genasi",
       subrace: "Fire",
       classes: [{ class: "Cleric", level: 5 }],
-      "session-count": 3,
       "starting-level": 5,
     },
     {
@@ -100,7 +92,6 @@ const Data = {
       name: "Grimshroom",
       race: "Goblin",
       classes: [{ class: "Druid", level: 6 }],
-      "session-count": 1,
       "starting-level": 6,
     },
     {
@@ -111,7 +102,6 @@ const Data = {
       nickname: "Raahm",
       race: "Human",
       classes: [{ class: "Barbarian", level: 3 }],
-      "session-count": 1,
       "starting-level": 3,
     },
     {
@@ -126,7 +116,6 @@ const Data = {
         { class: "Bard", level: 5 },
         { class: "Warlock", level: 1 },
       ],
-      "session-count": 1,
       "starting-level": 6,
     },
     {
@@ -136,7 +125,6 @@ const Data = {
       name: "Lorenz",
       race: "Tiefling",
       classes: [{ class: "Sorcerer", level: 6 }],
-      "session-count": 10,
       "starting-level": 3,
     },
     {
@@ -146,7 +134,6 @@ const Data = {
       name: "Luren",
       race: "Tiefling",
       classes: [{ class: "Warlock", level: 5 }],
-      "session-count": 6,
       "starting-level": 3,
     },
     {
@@ -157,7 +144,6 @@ const Data = {
       nickname: "Zak",
       race: "Goliath",
       classes: [{ class: "Paladin", level: 8 }],
-      "session-count": 14,
       "starting-level": 3,
     },
     {
@@ -171,7 +157,6 @@ const Data = {
         { class: "Ranger", level: 4 },
         { class: "Rogue", level: 2 },
       ],
-      "session-count": 7,
       "starting-level": 4,
     },
     {
@@ -185,7 +170,6 @@ const Data = {
         { class: "Fighter", level: 5 },
         { class: "Ranger", level: 1 },
       ],
-      "session-count": 6,
       "starting-level": 4,
     },
     {
@@ -196,7 +180,6 @@ const Data = {
       race: "Halfling",
       subrace: "Lightfoot",
       classes: [{ class: "Bard", level: 6 }],
-      "session-count": 7,
       "starting-level": 3,
     },
     {
@@ -207,7 +190,6 @@ const Data = {
       nickname: "Thurdun",
       race: "Dwarf",
       classes: [{ class: "Bard", level: 3 }],
-      "session-count": 1,
       "starting-level": 3,
     },
     {
@@ -218,7 +200,6 @@ const Data = {
       nickname: "Utredyn",
       race: "Triton",
       classes: [{ class: "Barbarian", level: 6 }],
-      "session-count": 2,
       "starting-level": 5,
     },
     {
@@ -229,7 +210,6 @@ const Data = {
       nickname: "Alavara",
       race: "Half Elf (Wood)",
       classes: [{ class: "Paladin", level: 4 }],
-      "session-count": 1,
       "starting-level": 4,
     },
     {
@@ -239,7 +219,6 @@ const Data = {
       name: "Trazyn",
       race: "Human",
       classes: [{ class: "Wizard", level: 6 }],
-      "session-count": 9,
       "starting-level": 3,
     },
     {
@@ -248,7 +227,6 @@ const Data = {
       name: "Wilhelm",
       race: "Mountain Dwarf",
       classes: [{ class: "Barbarian", level: 4 }],
-      "session-count": 3,
       "starting-level": 3,
     },
     {
@@ -257,7 +235,6 @@ const Data = {
       name: "Galain",
       race: "Gnome",
       classes: [{ class: "Artificer", level: 6 }],
-      "session-count": 3,
       "starting-level": 6,
     },
     {
@@ -266,7 +243,6 @@ const Data = {
       name: "Aatos",
       race: "Human",
       classes: [{ class: "Paladin", level: 6 }],
-      "session-count": 2,
       "starting-level": 6,
     },
   ],
@@ -282,11 +258,20 @@ const Data = {
       "discord-channel": "#session-2",
     },
     {
+      name: "Zhushah's Escort",
+      "dungeon-master": "JackClarke",
+      "suggested-by": "SunRester",
+      "scheduled-date": "2020 10 22",
+      players: [26128406, 35316039, 27850604, 34130081, 26109480],
+      "max-players": 5,
+      "discord-channel": "#session-2",
+    },
+    {
       name: "Mumsy's Extra Planar Adventures",
       "dungeon-master": "SunRester",
       "suggested-by": "SunRester",
       "suggested-date": "2020 09 10",
-      "scheduled-date": "2020 10 19",
+      "scheduled-date": "2020 10 25",
       players: [26119200, 34185467, 26133759, 34044602, 27850604],
       "max-players": 5,
       "discord-channel": "#session-1",
