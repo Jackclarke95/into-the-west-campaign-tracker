@@ -569,6 +569,7 @@ const Data = {
       name: "Jack",
       "dndbeyond-name": "JackClarke",
       "dungeon-master": true,
+      email: "jackclarke95@gmail.com",
     },
     {
       name: "Sarah",
@@ -577,8 +578,8 @@ const Data = {
     {
       name: "Louis",
       "dndbeyond-name": "SchemingPnda",
-      "screen-name": "Louis",
       "dungeon-master": true,
+      email: "louiswilliams1000@gmail.com",
     },
     {
       name: "Kosky",
