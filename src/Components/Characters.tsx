@@ -159,7 +159,9 @@ function determineNextSession(character, sessions) {
     });
 
   return matchingSessions.length > 0
-    ? new Date(matchingSessions[0]["scheduled-date"]).toLocaleDateString()
+    ? `${matchingSessions[0].name}\r\n${new Date(
+        matchingSessions[0]["scheduled-date"]
+      ).toLocaleDateString()}`
     : "N/A";
 }
 

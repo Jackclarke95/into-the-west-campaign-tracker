@@ -296,6 +296,7 @@ const Data = {
       "dungeon-master": "Benjywa",
       "suggested-by": "Benjywa",
       "suggested-date": "2020 10 13",
+      "scheduled-date": "2020 10 28",
       players: [34189033, 26133759, 30038677, 26128406, 33132303],
       "max-players": 5,
       "discord-channel": "#session-4",
