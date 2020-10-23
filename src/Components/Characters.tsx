@@ -49,9 +49,15 @@ const Characters = (props) => {
                 title={character.name}
               >
                 <td className="column name">
-                  <img
-                    src={`https://www.dndbeyond.com/avatars/${character["avatar-link"]}`}
-                  />
+                  <a
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    href={`https://www.dndbeyond.com/avatars/${character["avatar-link"]}`}
+                  >
+                    <img
+                      src={`https://www.dndbeyond.com/avatars/${character["avatar-link"]}`}
+                    />
+                  </a>
                   <a
                     className="character-name"
                     rel="noopener noreferrer"
