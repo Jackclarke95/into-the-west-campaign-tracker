@@ -26,15 +26,17 @@ const NextAdventure = (props) => {
     ? `${nextSession.name} | Scheduled: ${new Date(
         nextSession["scheduled-date"]
       ).toLocaleDateString("en-GB")} | Dungeon Master: ${
-        players.find((p) => p["dndbeyond-name"] === nextSession["dungeon-master"]).name
+        players.find(
+          (p) => p["dndbeyond-name"] === nextSession["dungeon-master"]
+        ).name
       }`
     : "None scheduled";
 
   return (
-    <span className="panel next-adventure-panel">
+    <div className="panel next-adventure-panel">
       <b>Next Adventure: </b>
       {message}
-    </span>
+    </div>
   );
 };
 
