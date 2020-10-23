@@ -7,6 +7,7 @@ import Links from "./Components/Links";
 import Rules from "./Components/Rules";
 import NextAdventure from "./Components/NextAdventure";
 import DeploymentDate from "./Components/DeploymentDate";
+import Facilities from "./Components/Facilities";
 import Data from "./Data/Data";
 import * as DataHelper from "./Data/DataHelper";
 
@@ -26,6 +27,10 @@ ReactDOM.render(
     <div className="info">
       <Links linkGroups={Data["link-groups"]} />
       <Rules />
+      <Facilities
+        facilities={Data.facilities}
+        downtimeActivities={Data["downtime-activities"]}
+      />
     </div>
     <Characters
       sessions={Data.sessions}
@@ -37,6 +42,7 @@ ReactDOM.render(
       players={Data.players}
       characters={Data.characters}
     />
+
     {/* TODO: Graveyard */}
     {/* TODO: Player shop */}
     <DeploymentDate />
