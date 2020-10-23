@@ -587,6 +587,63 @@ const Data = {
       "dndbeyond-name": "ThePerkyRiolu",
     },
   ],
+  facilities: [
+    {
+      id: 1,
+      name: "Arcanist's Study",
+      activities: {
+        preparation: { activity: "Produce Scrolls and Potions", id: 1 },
+        discovery: { activity: "Discern Origin", id: 2 },
+      },
+    },
+    {
+      id: 2,
+      name: "Armoury",
+      activities: {
+        preparation: { activity: "Training", id: 3 },
+        discovery: { activity: "Rumours of the Explorers", id: 4 },
+      },
+    },
+    {
+      id: 3,
+      name: "Docks",
+      activities: {
+        preparation: { activity: "Secure Transport", id: 5 },
+        discovery: { activity: "Discern Origin", id: 6 },
+      },
+    },
+    {
+      id: 4,
+      name: "Library",
+      activities: {
+        preparation: { activity: "Study Adversary", id: 7 },
+        discovery: { activity: "Research Lore", id: 8 },
+      },
+    },
+    {
+      id: 5,
+      name: "Scouting Post",
+      activities: {
+        preparation: { activity: "Research Terrain", id: 9 },
+        discovery: { activity: "Scout Region", id: 10 },
+      },
+    },
+    {
+      id: 6,
+      name: "Temple",
+      activities: {
+        preparation: { activity: "Implore Deity", id: 11 },
+        discovery: { activity: "Divine Communion", id: 12 },
+      },
+    },
+  ],
+  downtime: [
+    {
+      activity: "Produce Scrolls and Potions",
+      details: "Star Crystal",
+      "character-id": 1,
+    },
+  ],
 };
 
 export default Data;
