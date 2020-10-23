@@ -50,6 +50,7 @@ const Characters = (props) => {
               >
                 <td className="column name">
                   <a
+                    className="avatar-link"
                     rel="noopener noreferrer"
                     target="_blank"
                     href={`https://www.dndbeyond.com/avatars/${character["avatar-link"]}`}

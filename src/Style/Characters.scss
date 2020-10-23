@@ -3,6 +3,9 @@
     td.column.name {
       text-align: left;
       align-items: center;
+      .avatar-link {
+        font-size: 1px;
+      }
       img {
         object-fit: cover;
         width: 30px;
