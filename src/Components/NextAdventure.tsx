@@ -21,11 +21,6 @@ const NextAdventure = (props) => {
       );
     });
 
-  sessions.map((s) => {
-    console.log(s);
-    console.log(s["scheduled-date"]);
-  });
-
   const nextSession = sessions[0];
   var message = nextSession["scheduled-date"]
     ? `${nextSession.name} | Scheduled: ${new Date(
