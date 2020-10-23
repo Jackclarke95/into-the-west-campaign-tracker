@@ -68,6 +68,7 @@ class App extends React.Component {
             />
             {/* TODO: Graveyard */}
             {/* TODO: Player shop */}
+            {/* TODO: Mobile Styling */}
             <DeploymentDate />
           </>
         ) : (
