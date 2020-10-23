@@ -92,9 +92,7 @@ const Characters = (props) => {
                   )}
                 </td>
                 <td className="column next-session">
-                  {character["next-session"]
-                    ? character["next-session"]
-                    : "N/A"}
+                  {determineNextSession(character, sessions)}
                 </td>
                 <td className="column test-data">
                   {players.map((player) => {
@@ -125,6 +123,39 @@ const Characters = (props) => {
   );
 };
 
+function determineNextSession(character, sessions) {
+  var matchingSessions = [];
+
+  sessions.map((session) => {
+    if (
+      session.players.includes(character.id) &&
+      new Date(session["scheduled-date"]) > new Date()
+    ) {
+      matchingSessions.push(session);
+    }
+  });
+
+  matchingSessions
+    .filter(
+      (x) =>
+        new Date(x["scheduled-date"]) > new Date() ||
+        x["scheduled-date"] === undefined
+    )
+    .sort((a, b) => {
+      if (a["scheduled-date"] ? !b["scheduled-date"] : b["scheduled-date"])
+        return 1;
+
+      return (
+        new Date(a["scheduled-date"]).getTime() -
+        new Date(b["scheduled-date"]).getTime()
+      );
+    });
+
+  return matchingSessions.length > 0
+    ? new Date(matchingSessions[0]["scheduled-date"]).toLocaleDateString()
+    : "N/A";
+}
+
 function countSessionsAttended(character, sessions) {
   var matchingSessions = [];
 
@@ -136,12 +167,6 @@ function countSessionsAttended(character, sessions) {
       matchingSessions.push(session);
     }
   });
-
-  if (character.nickname === "Chaia") {
-    console.log(matchingSessions);
-  }
-
-  debugger;
 
   return matchingSessions.length;
 }
