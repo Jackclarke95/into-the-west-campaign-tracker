@@ -1,6 +1,5 @@
 import * as React from "react";
-import { act } from "react-dom/test-utils";
-import "../Style/Characters.scss";
+import "../Style/Facilities.scss";
 
 const Facilities = (props) => {
   let facilities = props.facilities;
@@ -26,7 +25,19 @@ const Facilities = (props) => {
           {facilities.map((f) => {
             return (
               <tr>
-                <td className="column name">{f.name}</td>
+                <td className="column name">
+                  <img
+                    src={
+                      process.env.PUBLIC_URL +
+                      `/Images/${f.name
+                        .toLowerCase()
+                        .replace(" ", "-")
+                        .replace("'", "")}-icon.svg`
+                    }
+                    alt="logo"
+                  />
+                  {f.name}
+                </td>
                 <td className="column tier-level">
                   {calculateTierLevel(f, downtimeActivities)}
                 </td>
@@ -76,11 +87,9 @@ function calculateUsesToNextLevel(facility, activities) {
 
   if (tierLevel === 1) {
     return 10 - tierUses;
-  }
-  else if (tierLevel === 2) {
+  } else if (tierLevel === 2) {
     return 25 - tierUses;
-  }
-  else return "N/A";
+  } else return "N/A";
 }
 
 export default Facilities;

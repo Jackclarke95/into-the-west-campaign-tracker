@@ -1,2 +1,17 @@
 .facilities-panel {
+  table {
+    tbody {
+      td.column.name {
+        text-align: left;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        img {
+          width: 30px;
+          height: 30px;
+          margin-right: 1em;
+        }
+      }
+    }
+  }
 }
