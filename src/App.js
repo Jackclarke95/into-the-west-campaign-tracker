@@ -8,21 +8,28 @@ import Rules from "./Components/Rules";
 import NextAdventure from "./Components/NextAdventure";
 import DeploymentDate from "./Components/DeploymentDate";
 import Facilities from "./Components/Facilities";
-import Data from "./Data/Data";
 import "./App.scss";
 
 class App extends React.Component {
+  state = {
+    currentUser: null,
+    liveData: undefined,
+  };
+
   constructor() {
     super();
-
-    this.state = {
-      currentUser: null,
-    };
   }
 
   unsubscribeFromAuth = null;
 
   componentDidMount() {
+    fetch("https://into-the-west-campaign-t-e3d32.firebaseio.com/.json")
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({ liveData: data });
+      })
+      .catch(console.error);
+
     this.unsubscribeFromAuth = auth.onAuthStateChanged((user) => {
       this.setState({ currentUser: user });
     });
@@ -51,29 +58,32 @@ class App extends React.Component {
                 src={this.state.currentUser.photoURL}
               />
             </div>
-            <NextAdventure sessions={Data.sessions} players={Data.players} />
+            <NextAdventure
+              sessions={this.state.liveData.sessions}
+              players={this.state.liveData.players}
+            />
             <div className="info">
-              <Links linkGroups={Data["link-groups"]} />
+              <Links linkGroups={this.state.liveData["link-groups"]} />
               <Rules />
+              <Graveyard
+                sessions={this.state.liveData.sessions}
+                characters={this.state.liveData.characters}
+                players={this.state.liveData.players}
+              />
               <Facilities
-                facilities={Data.facilities}
-                downtimeActivities={Data["downtime-activities"]}
+                facilities={this.state.liveData.facilities}
+                downtimeActivities={this.state.liveData["downtime-activities"]}
               />
             </div>
             <Characters
-              sessions={Data.sessions}
-              characters={Data.characters}
-              players={Data.players}
+              sessions={this.state.liveData.sessions}
+              characters={this.state.liveData.characters}
+              players={this.state.liveData.players}
             />
             <Sessions
-              sessions={Data.sessions}
-              players={Data.players}
-              characters={Data.characters}
-            />
-            <Graveyard
-              sessions={Data.sessions}
-              characters={Data.characters}
-              players={Data.players}
+              sessions={this.state.liveData.sessions}
+              players={this.state.liveData.players}
+              characters={this.state.liveData.characters}
             />
             {/* TODO: Graveyard */}
             {/* TODO: Player shop */}
