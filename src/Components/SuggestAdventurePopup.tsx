@@ -73,8 +73,32 @@ function suggestAdventureContent(dungeonMasters) {
         </div>
         <input type="submit" />
       </form>
+      <button onClick={() => createTestSession()}>Test create session</button>
     </>
   );
+}
+
+function createTestSession() {
+  let testSession = {
+    id: 35,
+    name: "Test Sessions",
+    "dungeon-master": "JackClarke",
+    "suggested-by": "JackClarke",
+    "suggested-date": "3030 10 27",
+    "max-players": 5,
+  };
+
+  let requestOptions = {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ sessions: testSession }),
+  };
+
+  fetch(
+    "https://into-the-west-campaign-t-e3d32.firebaseio.com/sessions/.json",
+    requestOptions
+  );
+  window.alert("hello!");
 }
 
 export default SuggestAdventurePopup;
