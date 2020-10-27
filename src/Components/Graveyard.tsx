@@ -27,7 +27,7 @@ const Graveyard = (props) => {
         <thead key="thead">
           <tr>
             <th className="column name">Name</th>
-            <th className="column current-level">Current Level</th>
+            <th className="column current-level">Level Reached</th>
             <th className="column cause">Cause</th>
           </tr>
         </thead>
