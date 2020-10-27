@@ -1,6 +1,7 @@
 import React from "react";
 import { signInWithGoogle, auth } from "./firebase.utils";
 import Characters from "./Components/Characters";
+import Graveyard from "./Components/Graveyard";
 import Sessions from "./Components/Sessions";
 import Links from "./Components/Links";
 import Rules from "./Components/Rules";
@@ -45,7 +46,10 @@ class App extends React.Component {
                   Sign Out
                 </div>
               </div>
-              <img src={this.state.currentUser.photoURL} />
+              <img
+                alt="User Profile Picture"
+                src={this.state.currentUser.photoURL}
+              />
             </div>
             <NextAdventure sessions={Data.sessions} players={Data.players} />
             <div className="info">
@@ -65,6 +69,11 @@ class App extends React.Component {
               sessions={Data.sessions}
               players={Data.players}
               characters={Data.characters}
+            />
+            <Graveyard
+              sessions={Data.sessions}
+              characters={Data.characters}
+              players={Data.players}
             />
             {/* TODO: Graveyard */}
             {/* TODO: Player shop */}

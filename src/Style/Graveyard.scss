@@ -1,11 +1,14 @@
-.characters-panel {
+.graveyard-panel {
   table {
-    td.column.name {
+    .column.name,
+    .column.cause {
       text-align: left;
       align-items: center;
       .avatar-link {
         font-size: 0px;
       }
+    }
+    .column.name {
       img {
         object-fit: cover;
         width: 30px;
@@ -29,7 +32,7 @@
     }
     tbody {
       display: block;
-      height: 322px;
+      height: 276px;
       overflow-y: auto;
     }
   }

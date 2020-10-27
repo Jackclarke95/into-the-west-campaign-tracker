@@ -41,6 +41,7 @@ const Data = {
       race: "Half-orc",
       classes: [{ class: "Fighter", level: 8 }],
       "starting-level": 3,
+      retirement: { date: "2020 05 31", cause: "Killed by ogres", dead: true },
     },
     {
       id: 27850604,
@@ -134,6 +135,7 @@ const Data = {
       race: "Tiefling",
       classes: [{ class: "Warlock", level: 5 }],
       "starting-level": 3,
+      retirement: { date: "2020 05 31", cause: "Killed by a beholder" },
     },
     {
       id: 26109480,
@@ -157,6 +159,7 @@ const Data = {
         { class: "Rogue", level: 2 },
       ],
       "starting-level": 4,
+      retirement: { date: "2020 05 31", cause: "Left for dead to a beholder" },
     },
     {
       id: 31690387,
@@ -211,6 +214,7 @@ const Data = {
       subrace: "Wood",
       classes: [{ class: "Paladin", level: 4 }],
       "starting-level": 4,
+      retirement: { date: "2020 05 17", cause: "Retired by player" },
     },
     {
       id: 1,
@@ -220,6 +224,7 @@ const Data = {
       race: "Human",
       classes: [{ class: "Wizard", level: 6 }],
       "starting-level": 3,
+      retirement: { date: "2020 07 23", cause: "Retired by player" },
     },
     {
       id: 2,
@@ -228,6 +233,7 @@ const Data = {
       race: "Mountain Dwarf",
       classes: [{ class: "Barbarian", level: 4 }],
       "starting-level": 3,
+      retirement: { date: "2020 05 31", cause: "Killed by ogres" },
     },
     {
       id: 3,
@@ -236,6 +242,7 @@ const Data = {
       race: "Gnome",
       classes: [{ class: "Artificer", level: 6 }],
       "starting-level": 6,
+      retirement: { date: "2020 08 03", cause: "Retired by player" },
     },
     {
       id: 4,
@@ -244,6 +251,10 @@ const Data = {
       race: "Human",
       classes: [{ class: "Paladin", level: 6 }],
       "starting-level": 6,
+      retirement: {
+        date: "2020 05 31",
+        cause: "Left for dead with a blue dragon",
+      },
     },
   ],
   sessions: [

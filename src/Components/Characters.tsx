@@ -5,16 +5,18 @@ const Characters = (props) => {
   const players = props.players;
   const sessions = props.sessions;
 
-  const characters = props.characters.sort((a, b) => {
-    const aNameToCompare = a.nickname ?? a.name;
-    const bNameToCompare = b.nickname ?? b.name;
+  const characters = props.characters
+    .filter((c) => !c.retirement)
+    .sort((a, b) => {
+      const aNameToCompare = a.nickname ?? a.name;
+      const bNameToCompare = b.nickname ?? b.name;
 
-    return aNameToCompare < bNameToCompare
-      ? -1
-      : aNameToCompare > bNameToCompare
-      ? 1
-      : 0;
-  });
+      return aNameToCompare < bNameToCompare
+        ? -1
+        : aNameToCompare > bNameToCompare
+        ? 1
+        : 0;
+    });
 
   return (
     <div className="panel characters-panel">
@@ -131,7 +133,7 @@ const Characters = (props) => {
 };
 
 function determineNextSession(character, sessions) {
-  var matchingSessions = [];
+  let matchingSessions = [];
 
   sessions.map((session) => {
     if (
@@ -166,7 +168,7 @@ function determineNextSession(character, sessions) {
 }
 
 function countSessionsAttended(character, sessions) {
-  var matchingSessions = [];
+  let matchingSessions = [];
 
   sessions.map((session) => {
     if (
@@ -188,9 +190,10 @@ function countSessionsAttended(character, sessions) {
  * @returns {string} A formatted list of the character's classes
  */
 function formatClasses(classes) {
-  var formattedClasses = `${classes[0].class} (${classes[0].level})`;
+  let formattedClasses = `${classes[0].class} (${classes[0].level})`;
 
-  var i;
+  let i;
+
   for (i = 1; i < classes.length; i++) {
     formattedClasses += `, ${classes[i].class} (${classes[i].level})`;
   }
@@ -207,13 +210,13 @@ function formatClasses(classes) {
  * @returns {number} The remaining number of sessions a character must attend in order to gain a level
  */
 function calculateRemainingSessionsForLevelUp(startingLevel, sessionCount) {
-  var currentLevel = calculateLevelFromSessions(startingLevel, sessionCount);
+  let currentLevel = calculateLevelFromSessions(startingLevel, sessionCount);
 
-  var sessionsRequiredForNext = calculateOffsetSessionsRequiredForLevel(
+  let sessionsRequiredForNext = calculateOffsetSessionsRequiredForLevel(
     currentLevel + 1
   );
 
-  var offsetCurrentSessions =
+  let offsetCurrentSessions =
     sessionCount + calculateOffsetSessionsRequiredForLevel(startingLevel);
 
   return sessionsRequiredForNext - offsetCurrentSessions;
@@ -240,9 +243,9 @@ function calculateTotalSessionsToNextLevel(level: number) {
  * @returns {number} The character's level
  */
 function calculateLevelFromSessions(startingLevel, sessionCount) {
-  var currentLevel = startingLevel;
-  var remainingSessions = sessionCount;
-  var sessionsToLevel = calculateTotalSessionsToNextLevel(currentLevel + 1);
+  let currentLevel = startingLevel;
+  let remainingSessions = sessionCount;
+  let sessionsToLevel = calculateTotalSessionsToNextLevel(currentLevel + 1);
 
   while (remainingSessions >= sessionsToLevel) {
     remainingSessions -= sessionsToLevel;
@@ -262,8 +265,8 @@ function calculateLevelFromSessions(startingLevel, sessionCount) {
  * @returns {number} The number of sessions required for this level
  */
 function calculateOffsetSessionsRequiredForLevel(level) {
-  var minimumSessions = 0;
-  var currentLevel = 1;
+  let minimumSessions = 0;
+  let currentLevel = 1;
 
   while (currentLevel < level) {
     currentLevel++;
