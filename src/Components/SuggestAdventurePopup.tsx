@@ -95,10 +95,10 @@ function createTestSession() {
   };
 
   fetch(
-    "https://into-the-west-campaign-t-e3d32.firebaseio.com/sessions/.json",
-    requestOptions
+    "https://into-the-west-campaign-t-e3d32.firebaseio.com/sessions/.json"
+    //,requestOptions
   );
-  window.alert("hello!");
+  window.alert("This functionality isn't added yet. Check back later!");
 }
 
 export default SuggestAdventurePopup;
