@@ -5,8 +5,6 @@ const Facilities = (props) => {
   let facilities = props.facilities;
   let downtimeActivities = props.downtimeActivities;
 
-  console.log(downtimeActivities);
-
   return (
     <div className="panel facilities-panel">
       <div className="header-and-button">
