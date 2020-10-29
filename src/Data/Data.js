@@ -345,6 +345,7 @@ const Data = {
         "ThePerkyRiolu",
       ],
       "max-players": 5,
+      "discord-channel": "#session-2",
     },
     {
       id: 31,
@@ -355,6 +356,7 @@ const Data = {
       "scheduled-date": "2020 11 04",
       characters: [27850604, 26128406, 35316039, 33132303, 27760478],
       "max-players": 5,
+      "discord-channel": "#session-1",
     },
     {
       id: 32,
@@ -369,6 +371,7 @@ const Data = {
         "BlackRoseSarah89",
       ],
       "max-players": 5,
+      "discord-channel": "#session-3",
     },
     {
       id: 32,
@@ -378,6 +381,7 @@ const Data = {
       "suggested-date": "2020 10 28",
       characters: [27850604, 34130081, 35316039, 35382595, 27760478],
       "max-players": 5,
+      "discord-channel": "#session-5",
     },
     {
       id: 25,

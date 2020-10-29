@@ -84,11 +84,6 @@ class App extends React.Component {
                     characters={this.state.liveData.characters}
                     players={this.state.liveData.players}
                   />
-                  <Graveyard
-                    sessions={this.state.liveData.sessions}
-                    characters={this.state.liveData.characters}
-                    players={this.state.liveData.players}
-                  />
                 </span>
                 <span className="row session-and-facilities-row">
                   <Sessions
@@ -101,6 +96,11 @@ class App extends React.Component {
                     downtimeActivities={
                       this.state.liveData["downtime-activities"]
                     }
+                  />
+                  <Graveyard
+                    sessions={this.state.liveData.sessions}
+                    characters={this.state.liveData.characters}
+                    players={this.state.liveData.players}
                   />
                 </span>
               </>
