@@ -44,51 +44,72 @@ class App extends React.Component {
       <>
         {this.state.currentUser ? (
           <>
-            <h1>Into The West Campaign Tracker</h1>
-            <div className="user-menu">
-              <div className="user-info">
-                Signed in as: {this.state.currentUser.displayName}
-                <div className="spacer">|</div>
-                <div className="sign-out-button" onClick={() => auth.signOut()}>
-                  Sign Out
+            {!this.state.liveData ? (
+              <div>Loading...</div>
+            ) : (
+              <>
+                <div className="top-banner">
+                  <div className="character-info">
+                    {determineActiveCharacterName(
+                      this.state.currentUser.email,
+                      this.state.liveData.characters,
+                      this.state.liveData.players
+                    )}
+                  </div>
+                  <h1>Into The West Campaign Tracker</h1>
+                  <div className="user-menu">
+                    <div className="user-info">
+                      Signed in as: {this.state.currentUser.displayName}
+                      <div className="spacer">|</div>
+                      <div
+                        className="sign-out-button"
+                        onClick={() => auth.signOut()}
+                      >
+                        Sign Out
+                      </div>
+                    </div>
+                    <img
+                      alt="User Profile Picture"
+                      src={this.state.currentUser.photoURL}
+                    />
+                  </div>
                 </div>
-              </div>
-              <img
-                alt="User Profile Picture"
-                src={this.state.currentUser.photoURL}
-              />
-            </div>
-            <NextAdventure
-              sessions={this.state.liveData.sessions}
-              players={this.state.liveData.players}
-            />
-            <div className="info">
-              <Links linkGroups={this.state.liveData["link-groups"]} />
-              <Rules />
-              <Graveyard
-                sessions={this.state.liveData.sessions}
-                characters={this.state.liveData.characters}
-                players={this.state.liveData.players}
-              />
-              <Facilities
-                facilities={this.state.liveData.facilities}
-                downtimeActivities={this.state.liveData["downtime-activities"]}
-              />
-            </div>
-            <Characters
-              sessions={this.state.liveData.sessions}
-              characters={this.state.liveData.characters}
-              players={this.state.liveData.players}
-            />
-            <Sessions
-              sessions={this.state.liveData.sessions}
-              players={this.state.liveData.players}
-              characters={this.state.liveData.characters}
-            />
-            {/* TODO: Graveyard */}
+                <NextAdventure
+                  sessions={this.state.liveData.sessions}
+                  players={this.state.liveData.players}
+                />
+                <div className="info">
+                  <Links linkGroups={this.state.liveData["link-groups"]} />
+                  <Rules />
+                  <Graveyard
+                    sessions={this.state.liveData.sessions}
+                    characters={this.state.liveData.characters}
+                    players={this.state.liveData.players}
+                  />
+                  <Facilities
+                    facilities={this.state.liveData.facilities}
+                    downtimeActivities={
+                      this.state.liveData["downtime-activities"]
+                    }
+                  />
+                </div>
+                <Characters
+                  sessions={this.state.liveData.sessions}
+                  characters={this.state.liveData.characters}
+                  players={this.state.liveData.players}
+                />
+                <Sessions
+                  sessions={this.state.liveData.sessions}
+                  players={this.state.liveData.players}
+                  characters={this.state.liveData.characters}
+                />
+              </>
+            )}
             {/* TODO: Player shop */}
             {/* TODO: Mobile Styling */}
-            <DeploymentDate />
+            <div className="bottom-banner">
+              <DeploymentDate />
+            </div>
           </>
         ) : (
           <>
@@ -113,6 +134,35 @@ class App extends React.Component {
       </>
     );
   }
+}
+
+function determineActiveCharacterName(emailAddress, characters, players) {
+  let matchingPlayer = players.find((p) => p.email === emailAddress);
+
+  let matchingCharacters = characters.filter((c) => {
+    return (
+      c["player-dndbeyond-name"] === matchingPlayer["dndbeyond-name"] &&
+      !c.retirement
+    );
+  });
+
+  return (
+    <>
+      <div>Active Characters:</div>
+      {matchingCharacters.map((m) => {
+        return (
+          <a
+            className="character-name"
+            rel="noopener noreferrer"
+            target="_blank"
+            href={`https://www.dndbeyond.com/profile/${m["player-dndbeyond-name"]}/characters/${m.id}`}
+          >
+            {m.nickname ? m.nickname : m.name}
+          </a>
+        );
+      })}
+    </>
+  );
 }
 
 export default App;

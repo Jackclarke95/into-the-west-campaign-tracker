@@ -3,6 +3,7 @@ import "../Style/NextAdventure.scss";
 
 const NextAdventure = (props) => {
   const players = props.players;
+  let message;
 
   const sessions = props.sessions
     .filter(
@@ -21,9 +22,7 @@ const NextAdventure = (props) => {
       );
     });
 
-  let message;
-
-  if (sessions.length === 0) {
+  if (!sessions && sessions.length === 0) {
     message = "None Scheduled";
   } else {
     const nextSession = sessions[0];
@@ -39,10 +38,10 @@ const NextAdventure = (props) => {
   }
 
   return (
-    <div className="panel next-adventure-panel">
+    <span className="panel next-adventure-panel">
       <b>Next Adventure: </b>
       {message}
-    </div>
+    </span>
   );
 };
 

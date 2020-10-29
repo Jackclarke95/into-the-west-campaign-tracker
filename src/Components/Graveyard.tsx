@@ -5,6 +5,10 @@ const Graveyard = (props) => {
   const players = props.players;
   const sessions = props.sessions;
 
+  if (!players || !sessions || !props.characters) {
+    return <span className="panel graveyard-panel">Loading...</span>;
+  }
+
   const characters = props.characters
     .filter((c) => c.retirement)
     .sort((a, b) => {
@@ -19,60 +23,64 @@ const Graveyard = (props) => {
     });
 
   return (
-    <div className="panel graveyard-panel">
+    <span className="panel graveyard-panel">
       <div className="header-and-button">
         <h2>Hero Graveyard</h2>
       </div>
-      <table>
-        <thead key="thead">
-          <tr>
-            <th className="column name">Name</th>
-            <th className="column level">Level Attained</th>
-            <th className="column cause">Cause</th>
-          </tr>
-        </thead>
-        <tbody>
-          {characters.map((character) => {
-            return (
-              <tr
-                key={character.id}
-                data-id={character.id}
-                title={character.name}
-              >
-                <td className="column name">
-                  <a
-                    className="avatar-link"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    href={`https://www.dndbeyond.com/avatars/${character["avatar-link"]}`}
-                  >
-                    <img
-                      src={`https://www.dndbeyond.com/avatars/${character["avatar-link"]}`}
-                    />
-                  </a>
-                  <a
-                    className="character-name"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    href={`https://www.dndbeyond.com/profile/${character["player-dndbeyond-name"]}/characters/${character.id}`}
-                  >
-                    {character.nickname ? character.nickname : character.name}
-                  </a>
-                </td>
-                <td className="column level">
-                  {calculateLevelFromSessions(
-                    character,
-                    character["starting-level"],
-                    countSessionsAttended(character, sessions)
-                  )}
-                </td>
-                <td className="column cause">{character.retirement.cause}</td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-    </div>
+      {players && characters && sessions ? (
+        <table>
+          <thead key="thead">
+            <tr>
+              <th className="column name">Name</th>
+              <th className="column level">Level Attained</th>
+              <th className="column cause">Cause</th>
+            </tr>
+          </thead>
+          <tbody>
+            {characters.map((character) => {
+              return (
+                <tr
+                  key={character.id}
+                  data-id={character.id}
+                  title={character.name}
+                >
+                  <td className="column name">
+                    <a
+                      className="avatar-link"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      href={`https://www.dndbeyond.com/avatars/${character["avatar-link"]}`}
+                    >
+                      <img
+                        src={`https://www.dndbeyond.com/avatars/${character["avatar-link"]}`}
+                      />
+                    </a>
+                    <a
+                      className="character-name"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      href={`https://www.dndbeyond.com/profile/${character["player-dndbeyond-name"]}/characters/${character.id}`}
+                    >
+                      {character.nickname ? character.nickname : character.name}
+                    </a>
+                  </td>
+                  <td className="column level">
+                    {calculateLevelFromSessions(
+                      character,
+                      character["starting-level"],
+                      countSessionsAttended(character, sessions)
+                    )}
+                  </td>
+                  <td className="column cause">{character.retirement.cause}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      ) : (
+        <div>Loading...</div>
+      )}
+    </span>
   );
 };
 

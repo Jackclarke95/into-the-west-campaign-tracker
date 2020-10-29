@@ -5,53 +5,61 @@ const Facilities = (props) => {
   let facilities = props.facilities;
   let downtimeActivities = props.downtimeActivities;
 
-  return (
-    <div className="panel facilities-panel">
-      <div className="header-and-button">
-        <h2>Westeridge Facilities</h2>
-      </div>
-      <table>
-        <thead key="thead">
-          <tr>
-            <th className="column name">Facility</th>
-            <th className="column tier-level">Current Tier Level</th>
-            <th className="column uses">Total Uses</th>
-            <th className="column uses-to-level-up">Uses Until Level Up</th>
-          </tr>
-        </thead>
-        <tbody>
-          {facilities.map((f) => {
-            return (
+  if (!facilities || !downtimeActivities) {
+    return <span className="panel facilities-panel">Loading...</span>;
+  } else {
+    return (
+      <span className="panel facilities-panel">
+        <div className="header-and-button">
+          <h2>Westeridge Facilities</h2>
+        </div>
+        {facilities ? (
+          <table>
+            <thead key="thead">
               <tr>
-                <td className="column name">
-                  <img
-                    src={
-                      process.env.PUBLIC_URL +
-                      `/Images/${f.name
-                        .toLowerCase()
-                        .replace(" ", "-")
-                        .replace("'", "")}-icon.svg`
-                    }
-                    alt="logo"
-                  />
-                  {f.name}
-                </td>
-                <td className="column tier-level">
-                  {calculateTierLevel(f, downtimeActivities)}
-                </td>
-                <td className="column uses">
-                  {calculateFacilityUses(f, downtimeActivities)}
-                </td>
-                <td className="column uses-to-level-up">
-                  {calculateUsesToNextLevel(f, downtimeActivities)}
-                </td>
+                <th className="column name">Facility</th>
+                <th className="column tier-level">Current Tier Level</th>
+                <th className="column uses">Total Uses</th>
+                <th className="column uses-to-level-up">Uses Until Level Up</th>
               </tr>
-            );
-          })}
-        </tbody>
-      </table>
-    </div>
-  );
+            </thead>
+            <tbody>
+              {facilities.map((f) => {
+                return (
+                  <tr>
+                    <td className="column name">
+                      <img
+                        src={
+                          process.env.PUBLIC_URL +
+                          `/Images/${f.name
+                            .toLowerCase()
+                            .replace(" ", "-")
+                            .replace("'", "")}-icon.svg`
+                        }
+                        alt="logo"
+                      />
+                      {f.name}
+                    </td>
+                    <td className="column tier-level">
+                      {calculateTierLevel(f, downtimeActivities)}
+                    </td>
+                    <td className="column uses">
+                      {calculateFacilityUses(f, downtimeActivities)}
+                    </td>
+                    <td className="column uses-to-level-up">
+                      {calculateUsesToNextLevel(f, downtimeActivities)}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        ) : (
+          <div>Loading...</div>
+        )}
+      </span>
+    );
+  }
 };
 
 function calculateFacilityUses(facility, activities) {

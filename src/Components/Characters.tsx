@@ -19,116 +19,120 @@ const Characters = (props) => {
     });
 
   return (
-    <div className="panel characters-panel">
+    <span className="panel characters-panel">
       <div className="header-and-button">
         <h2>Character Progression</h2>
         <div className="button-container">
           <button>Create Character</button>
         </div>
       </div>
-      <table>
-        <thead key="thead">
-          <tr>
-            <th className="column name">Name</th>
-            <th className="column race">Race</th>
-            <th className="column class">Class</th>
-            <th className="column current-level">Current Level</th>
-            <th className="column starting-level">Starting Level</th>
-            <th className="column session-count">Sessions Attended</th>
-            <th className="column sessions-to-level-up">
-              Sessions Until Level Up
-            </th>
-            <th className="column next-session">Next Session</th>
-            <th className="column test-date">Player</th>
-          </tr>
-        </thead>
-        <tbody>
-          {characters.map((character) => {
-            return (
-              <tr
-                key={character.id}
-                data-id={character.id}
-                title={character.name}
-              >
-                <td className="column name">
-                  <a
-                    className="avatar-link"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    href={`https://www.dndbeyond.com/avatars/${character["avatar-link"]}`}
-                  >
-                    <img
-                      src={`https://www.dndbeyond.com/avatars/${character["avatar-link"]}`}
-                    />
-                  </a>
-                  <a
-                    className="character-name"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    href={`https://www.dndbeyond.com/profile/${character["player-dndbeyond-name"]}/characters/${character.id}`}
-                  >
-                    {character.nickname ? character.nickname : character.name}
-                  </a>
-                </td>
-                <td className="column race">
-                  <a
-                    rel="noopener noreferrer"
-                    target="_blank"
-                    href={`https://www.dndbeyond.com/races/${character.race}`}
-                  >{`${character.race}${
-                    character.subrace ? ` (${character.subrace})` : ""
-                  }`}</a>
-                </td>
-                <td className="column class">
-                  {formatClasses(character.classes)}
-                </td>
-                <td className="column current-level">
-                  {calculateLevelFromSessions(
-                    character["starting-level"],
-                    countSessionsAttended(character, sessions)
-                  )}
-                </td>
-                <td className="column starting-level">
-                  {character["starting-level"]}
-                </td>
-                <td className="column session-count">
-                  {countSessionsAttended(character, sessions)}
-                </td>
-                <td className="column sessions-to-level-up">
-                  {calculateRemainingSessionsForLevelUp(
-                    character["starting-level"],
-                    countSessionsAttended(character, sessions)
-                  )}
-                </td>
-                <td className="column next-session">
-                  {determineNextSession(character, sessions)}
-                </td>
-                <td className="column test-data">
-                  {players.map((player) => {
-                    if (
-                      player["dndbeyond-name"] ===
-                      character["player-dndbeyond-name"]
-                    ) {
-                      return (
-                        <a
-                          key={player["dndbeyond-name"]}
-                          rel="noopener noreferrer"
-                          target="_blank"
-                          href={`https://www.dndbeyond.com/members/${character["player-dndbeyond-name"]}`}
-                        >
-                          {player["dndbeyond-name"]}
-                        </a>
-                      );
-                    }
-                    return null;
-                  })}
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
-    </div>
+      {players && sessions && characters ? (
+        <table>
+          <thead key="thead">
+            <tr>
+              <th className="column name">Name</th>
+              <th className="column race">Race</th>
+              <th className="column class">Class</th>
+              <th className="column current-level">Current Level</th>
+              <th className="column starting-level">Starting Level</th>
+              <th className="column session-count">Sessions Attended</th>
+              <th className="column sessions-to-level-up">
+                Sessions Until Level Up
+              </th>
+              <th className="column next-session">Next Session</th>
+              <th className="column test-date">Player</th>
+            </tr>
+          </thead>
+          <tbody>
+            {characters.map((character) => {
+              return (
+                <tr
+                  key={character.id}
+                  data-id={character.id}
+                  title={character.name}
+                >
+                  <td className="column name">
+                    <a
+                      className="avatar-link"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      href={`https://www.dndbeyond.com/avatars/${character["avatar-link"]}`}
+                    >
+                      <img
+                        src={`https://www.dndbeyond.com/avatars/${character["avatar-link"]}`}
+                      />
+                    </a>
+                    <a
+                      className="character-name"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      href={`https://www.dndbeyond.com/profile/${character["player-dndbeyond-name"]}/characters/${character.id}`}
+                    >
+                      {character.nickname ? character.nickname : character.name}
+                    </a>
+                  </td>
+                  <td className="column race">
+                    <a
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      href={`https://www.dndbeyond.com/races/${character.race}`}
+                    >{`${character.race}${
+                      character.subrace ? ` (${character.subrace})` : ""
+                    }`}</a>
+                  </td>
+                  <td className="column class">
+                    {formatClasses(character.classes)}
+                  </td>
+                  <td className="column current-level">
+                    {calculateLevelFromSessions(
+                      character["starting-level"],
+                      countSessionsAttended(character, sessions)
+                    )}
+                  </td>
+                  <td className="column starting-level">
+                    {character["starting-level"]}
+                  </td>
+                  <td className="column session-count">
+                    {countSessionsAttended(character, sessions)}
+                  </td>
+                  <td className="column sessions-to-level-up">
+                    {calculateRemainingSessionsForLevelUp(
+                      character["starting-level"],
+                      countSessionsAttended(character, sessions)
+                    )}
+                  </td>
+                  <td className="column next-session">
+                    {determineNextSession(character, sessions)}
+                  </td>
+                  <td className="column test-data">
+                    {players.map((player) => {
+                      if (
+                        player["dndbeyond-name"] ===
+                        character["player-dndbeyond-name"]
+                      ) {
+                        return (
+                          <a
+                            key={player["dndbeyond-name"]}
+                            rel="noopener noreferrer"
+                            target="_blank"
+                            href={`https://www.dndbeyond.com/members/${character["player-dndbeyond-name"]}`}
+                          >
+                            {player["dndbeyond-name"]}
+                          </a>
+                        );
+                      }
+                      return null;
+                    })}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      ) : (
+        <div>Loading...</div>
+      )}
+    </span>
   );
 };
 

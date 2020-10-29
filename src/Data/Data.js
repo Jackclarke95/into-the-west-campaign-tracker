@@ -934,6 +934,13 @@ const Data = {
     {
       "session-id": 28,
       activity: { name: "Training", id: 3 },
+      character: { id: 26114444, name: "Luren" },
+      details: "Large",
+      date: "2020 10 22",
+    },
+    {
+      "session-id": 28,
+      activity: { name: "Training", id: 3 },
       character: { id: 30318222, name: "Pipit" },
       details: "Large",
       date: "2020 10 22",
