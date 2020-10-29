@@ -137,7 +137,8 @@ function determineNextSession(character, sessions) {
 
   sessions.map((session) => {
     if (
-      session.players.includes(character.id) &&
+      session.characters &&
+      session.characters.includes(character.id) &&
       new Date(session["scheduled-date"]) > new Date()
     ) {
       matchingSessions.push(session);
@@ -172,7 +173,8 @@ function countSessionsAttended(character, sessions) {
 
   sessions.map((session) => {
     if (
-      session.players.includes(character.id) &&
+      session.characters &&
+      session.characters.includes(character.id) &&
       new Date(session["scheduled-date"]) < new Date()
     ) {
       matchingSessions.push(session);

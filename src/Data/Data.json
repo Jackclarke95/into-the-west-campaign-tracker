@@ -43,7 +43,7 @@
       "starting-level": 3,
       "retirement": {
         "date": "2020 05 31",
-        "cause": "Killed by ogres",
+        "cause": "Last seen in beholder's lair, presumed perished",
         "dead": true
       }
     },
@@ -142,9 +142,20 @@
       "retirement": { "date": "2020 05 31", "cause": "Killed by a beholder" }
     },
     {
+      "id": 27760478,
+      "player-dndbeyond-name": "FreemDeem",
+      "avatar-link": "17/445/636377888642793044.jpeg",
+      "name": "Patches O'Toole",
+      "nickname": "Patches",
+      "race": "Halfling",
+      "subrace": "Lightfoot",
+      "classes": [{ "class": "Rogue", "level": 8 }],
+      "starting-level": 8
+    },
+    {
       "id": 26109480,
       "player-dndbeyond-name": "ThePerkyRiolu",
-      "avatar-link": "18/18/636378975214214687.jpeg",
+      "avatar-link": "/18/18/636378975214214687.jpeg",
       "name": "Zaukan Thulaga Hornbearer",
       "nickname": "Zak",
       "race": "Goliath",
@@ -165,7 +176,7 @@
       "starting-level": 4,
       "retirement": {
         "date": "2020 05 31",
-        "cause": "Left for dead to a beholder"
+        "cause": "Last seen in beholder's lair, presumed perished"
       }
     },
     {
@@ -260,7 +271,7 @@
       "starting-level": 6,
       "retirement": {
         "date": "2020 05 31",
-        "cause": "Left for dead with a blue dragon"
+        "cause": "Sacrificed self to a blue dragon to save party"
       }
     }
   ],
@@ -272,7 +283,7 @@
       "suggested-by": "Chaia01",
       "suggested-date": "2020 09 03",
       "scheduled-date": "2020 10 01",
-      "players": [34044602, 27850604, 35316039, 30318222, 34130081],
+      "characters": [34044602, 27850604, 35316039, 30318222, 34130081],
       "max-players": 5,
       "discord-channel": "#session-2"
     },
@@ -282,7 +293,7 @@
       "dungeon-master": "JackClarke",
       "suggested-by": "SunRester",
       "scheduled-date": "2020 10 22",
-      "players": [26128406, 35316039, 27850604, 34130081, 26109480],
+      "characters": [26128406, 35316039, 27850604, 34130081, 26109480],
       "max-players": 5,
       "discord-channel": "#session-2"
     },
@@ -293,7 +304,7 @@
       "suggested-by": "SunRester",
       "suggested-date": "2020 09 10",
       "scheduled-date": "2020 10 25",
-      "players": [26119200, 34185467, 26133759, 34044602, 27850604],
+      "characters": [26119200, 34185467, 26133759, 34044602, 27850604],
       "max-players": 5,
       "discord-channel": "#session-1"
     },
@@ -304,7 +315,7 @@
       "suggested-by": "ThePerkyRiolu",
       "suggested-date": "2020 10 08",
       "scheduled-date": "2020 10 26",
-      "players": [26109480, 30318222, 26119200, 33132303, 34044602],
+      "characters": [26109480, 30318222, 26119200, 33132303, 34044602],
       "max-players": 5,
       "discord-channel": "#session-3"
     },
@@ -315,17 +326,57 @@
       "suggested-by": "Benjywa",
       "suggested-date": "2020 10 13",
       "scheduled-date": "2020 10 28",
-      "players": [34189033, 26133759, 30038677, 26128406, 33132303],
+      "characters": [34189033, 26133759, 30038677, 26128406, 33132303],
       "max-players": 5,
       "discord-channel": "#session-4"
     },
     {
       "id": 30,
-      "name": "Werewolves 3: the UwUening",
+      "name": "Halloween Improv Adventure",
       "dungeon-master": "JackClarke",
-      "suggested-by": "SchemingPnda",
+      "suggested-by": "JackClarke",
       "suggested-date": "2020 10 15",
-      "players": [30318222],
+      "scheduled-date": "2020 11 02",
+      "players": [
+        "JackClarke",
+        "FreemDeem",
+        "SchemingPnda",
+        "SunRester",
+        "ThePerkyRiolu"
+      ],
+      "max-players": 5
+    },
+    {
+      "id": 31,
+      "name": "Gotta Save the Babies!",
+      "dungeon-master": "SchemingPnda",
+      "suggested-by": "Chaia01",
+      "suggested-date": "2020 10 27",
+      "scheduled-date": "2020 11 04",
+      "characters": [27850604, 26128406, 35316039, 33132303, 27760478],
+      "max-players": 5
+    },
+    {
+      "id": 32,
+      "name": "The Hamlin Horror",
+      "dungeon-master": "FreemDeem",
+      "suggested-by": "FreemDeem",
+      "suggested-date": "2020 10 28",
+      "players": [
+        "JackClarke",
+        "ThePerkyRiolu",
+        "SchemingPnda",
+        "BlackRoseSarah89"
+      ],
+      "max-players": 5
+    },
+    {
+      "id": 32,
+      "name": "Help Chaia Clear Her Name!",
+      "dungeon-master": "JackClarke",
+      "suggested-by": "Chaia01",
+      "suggested-date": "2020 10 28",
+      "characters": [27850604, 34130081, 35316039, 35382595, 27760478],
       "max-players": 5
     },
     {
@@ -333,168 +384,168 @@
       "name": "Grimshroom's Revenge",
       "dungeon-master": "JackClarke",
       "scheduled-date": "2020 10 07",
-      "players": [26119200, 35382595, 26114444, 34189033, 26109480]
+      "characters": [26119200, 35382595, 26114444, 34189033, 26109480]
     },
     {
       "id": 23,
       "name": "Zak's Peak",
       "dungeon-master": "JackClarke",
       "scheduled-date": "2020 09 08",
-      "players": [34044602, 26128406, 26119200, 27850604, 26109480]
+      "characters": [34044602, 26128406, 26119200, 27850604, 26109480]
     },
     {
       "id": 22,
       "name": "Jack Wareham 2",
       "dungeon-master": "SchemingPnda",
       "scheduled-date": "2020 09 02",
-      "players": [26128406, 26119200, 3, 31690387, 26125998]
+      "characters": [26128406, 26119200, 3, 31690387, 26125998]
     },
     {
       "id": 21,
       "name": "Werewolves 2",
       "dungeon-master": "JackClarke",
       "scheduled-date": "2020 08 31",
-      "players": [26119200, 33132303, 26125998, 30318222]
+      "characters": [26119200, 33132303, 26125998, 30318222]
     },
     {
       "id": 20,
       "name": "Bright Eyes Bart",
       "dungeon-master": "FreemDeem",
       "scheduled-date": "2020 08 24",
-      "players": [34044602, 3, 34185467, 34130081, 26109480, 26133759]
+      "characters": [34044602, 3, 34185467, 34130081, 26109480, 26133759]
     },
     {
       "id": 19,
       "name": "Ruined Tower",
       "dungeon-master": "JackClarke",
       "scheduled-date": "2020 08 18",
-      "players": [26128406, 27850604, 33132303, 31690387, 26109480]
+      "characters": [26128406, 27850604, 33132303, 31690387, 26109480]
     },
     {
       "id": 18,
       "name": "Fallen Star 2",
       "dungeon-master": "JackClarke",
       "scheduled-date": "2020 08 17",
-      "players": [4, 30038677, 26119200, 31690387, 26133759]
+      "characters": [4, 30038677, 26119200, 31690387, 26133759]
     },
     {
       "id": 17,
       "name": "Jack Wareham",
       "dungeon-master": "SchemingPnda",
       "scheduled-date": "2020 08 13",
-      "players": [4, 26119200, 3, 26109480]
+      "characters": [4, 26119200, 3, 26109480]
     },
     {
       "id": 16,
       "name": "Ruined Castle",
       "dungeon-master": "JackClarke",
       "scheduled-date": "2020 08 04",
-      "players": [26128406, 33132303, 30318222, 26109480]
+      "characters": [26128406, 33132303, 30318222, 26109480]
     },
     {
       "id": 15,
       "name": "Delin's Contract",
       "dungeon-master": "JackClarke",
       "scheduled-date": "2020 07 28",
-      "players": [26128406, 27850604, 31690387, 30318222, 26109480]
+      "characters": [26128406, 27850604, 31690387, 30318222, 26109480]
     },
     {
       "id": 14,
       "name": "Sawmill",
       "dungeon-master": "FreemDeem",
       "scheduled-date": "2020 07 22",
-      "players": [31690387, 26125998, 26114444, 30318222, 1]
+      "characters": [31690387, 26125998, 26114444, 30318222, 1]
     },
     {
       "id": 13,
       "name": "Barbarian Camp",
       "dungeon-master": "FreemDeem",
       "scheduled-date": "2020 07 15",
-      "players": [31690387, 26125998, 26114444, 1, 26109480]
+      "characters": [31690387, 26125998, 26114444, 1, 26109480]
     },
     {
       "id": 1,
       "name": "Abandoned Tower 1 - Gnolls",
       "dungeon-master": "JackClarke",
       "scheduled-date": "2020 04 09",
-      "players": [26128406, 26119200, 26125998, 1, 2]
+      "characters": [26128406, 26119200, 26125998, 1, 2]
     },
     {
       "id": 2,
       "name": "Fallen Star",
       "dungeon-master": "JackClarke",
       "scheduled-date": "2020 04 11",
-      "players": [26114444, 26133759, 26375809, 26521341, 1]
+      "characters": [26114444, 26133759, 26375809, 26521341, 1]
     },
     {
       "id": 3,
       "name": "Mountain Fortress 1 - Lord",
       "dungeon-master": "JackClarke",
       "scheduled-date": "2020 04 22",
-      "players": [26128406, 26119200, 26133759, 26109480, 2]
+      "characters": [26128406, 26119200, 26133759, 26109480, 2]
     },
     {
       "id": 4,
       "name": "Village and Goblin Warband",
       "dungeon-master": "JackClarke",
       "scheduled-date": "2020 04 29",
-      "players": [26119200, 26125998, 26114444, 1, 26109480]
+      "characters": [26119200, 26125998, 26114444, 1, 26109480]
     },
     {
       "id": 5,
       "name": "Haunted Lighthouse",
       "dungeon-master": "JackClarke",
       "scheduled-date": "2020 05 03",
-      "players": [26128406, 27850604, 26133759, 1]
+      "characters": [26128406, 27850604, 26133759, 1]
     },
     {
       "id": 6,
       "name": "Goblin Warband Ambush",
       "dungeon-master": "JackClarke",
       "scheduled-date": "2020 05 09",
-      "players": [26128406, 26119200, 27850604, 26125998, 26133759]
+      "characters": [26128406, 26119200, 27850604, 26125998, 26133759]
     },
     {
       "id": 7,
       "name": "Cantrigan's Murder",
       "dungeon-master": "FreemDeem",
       "scheduled-date": "2020 05 16",
-      "players": [27850604, 26133759, 26109480, 28412605, 1]
+      "characters": [27850604, 26133759, 26109480, 28412605, 1]
     },
     {
       "id": 8,
       "name": "Mountain Fortress 2 - Ogres",
       "dungeon-master": "JackClarke",
       "scheduled-date": "2020 05 31",
-      "players": [26128406, 26119200, 26125998, 1, 2]
+      "characters": [26128406, 26119200, 26125998, 1, 2]
     },
     {
       "id": 9,
       "name": "Cantrigan's Gryphon",
       "dungeon-master": "FreemDeem",
       "scheduled-date": "2020 06 22",
-      "players": [30038677, 27850604, 26125998, 26114444, 26109480]
+      "characters": [30038677, 27850604, 26125998, 26114444, 26109480]
     },
     {
       "id": 10,
       "name": "Swamp & Werewolves",
       "dungeon-master": "JackClarke",
       "scheduled-date": "2020 06 24",
-      "players": [26128406, 30038677, 26119200, 27850604]
+      "characters": [26128406, 30038677, 26119200, 27850604]
     },
     {
       "id": 11,
       "name": "Forest Tribe Village",
       "dungeon-master": "JackClarke",
       "scheduled-date": "2020 06 30",
-      "players": [30038677, 26119200, 26125998, 30318222, 26109480]
+      "characters": [30038677, 26119200, 26125998, 30318222, 26109480]
     },
     {
       "id": 12,
       "name": "Abandoned Tower 2 - Sentry",
       "dungeon-master": "JackClarke",
       "scheduled-date": "2020 07 11",
-      "players": [26128406, 26119200, 30318222, 26109480, 1]
+      "characters": [26128406, 26119200, 30318222, 26109480, 1]
     }
   ],
   "link-groups": [

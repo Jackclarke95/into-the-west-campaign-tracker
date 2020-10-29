@@ -3,10 +3,10 @@ import "../Style/Rules.scss";
 
 function Rules() {
   return (
-    <span className="panel rules-panel">
+    <div className="panel rules-panel">
       <h2>Rules</h2>
       <p>Check back later...</p>
-    </span>
+    </div>
   );
 }
 

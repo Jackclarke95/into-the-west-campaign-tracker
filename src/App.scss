@@ -85,9 +85,6 @@ h2 {
 .info {
   display: flex;
   flex-direction: row;
-  .panel:last-of-type {
-    margin-left: 0;
-  }
 }
 
 ul {
@@ -124,10 +121,12 @@ form {
   background-color: #fbfbfb;
   padding: 16px;
   margin-top: 16px;
-  margin-left: 16px;
   margin-right: 16px;
   padding-bottom: 16px;
   display: inline-block;
+  &:first-of-type {
+    margin-left: 16px;
+  }
   &:hover {
     box-shadow: 0 0px 10px darken(#fbfbfb, 15%);
   }

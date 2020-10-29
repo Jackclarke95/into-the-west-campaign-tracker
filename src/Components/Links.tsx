@@ -4,7 +4,7 @@ import "../Style/Links.scss";
 const Links = (props) => {
   const linkGroups = props.linkGroups;
   return (
-    <span className="panel links-panel">
+    <div className="panel links-panel">
       <h2>Links</h2>
       <div className="link-lists">
         {linkGroups.map((linkGroup, i) => {
@@ -30,7 +30,7 @@ const Links = (props) => {
           );
         })}
       </div>
-    </span>
+    </div>
   );
 };
 

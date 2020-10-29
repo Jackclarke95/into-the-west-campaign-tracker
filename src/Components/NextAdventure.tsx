@@ -7,7 +7,7 @@ const NextAdventure = (props) => {
   const sessions = props.sessions
     .filter(
       (x) =>
-        new Date(x["scheduled-date"]) > new Date() &&
+        new Date(x["scheduled-date"]) >= new Date() &&
         x["scheduled-date"] !== undefined
     )
     // Order by scheduled date
@@ -21,16 +21,22 @@ const NextAdventure = (props) => {
       );
     });
 
-  const nextSession = sessions[0];
-  var message = nextSession["scheduled-date"]
-    ? `${nextSession.name} | Scheduled: ${new Date(
-        nextSession["scheduled-date"]
-      ).toLocaleDateString("en-GB")} | Dungeon Master: ${
-        players.find(
-          (p) => p["dndbeyond-name"] === nextSession["dungeon-master"]
-        ).name
-      }`
-    : "None scheduled";
+  let message;
+
+  if (sessions.length === 0) {
+    message = "None Scheduled";
+  } else {
+    const nextSession = sessions[0];
+    message = nextSession["scheduled-date"]
+      ? `${nextSession.name} | Scheduled: ${new Date(
+          nextSession["scheduled-date"]
+        ).toLocaleDateString("en-GB")} | Dungeon Master: ${
+          players.find(
+            (p) => p["dndbeyond-name"] === nextSession["dungeon-master"]
+          ).name
+        }`
+      : "None scheduled";
+  }
 
   return (
     <div className="panel next-adventure-panel">

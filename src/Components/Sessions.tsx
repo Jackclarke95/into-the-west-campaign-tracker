@@ -34,7 +34,7 @@ const Sessions = (props) => {
     });
 
   return (
-    <span className="panel sessions-panel">
+    <div className="panel sessions-panel">
       <div className="header-and-button">
         <h2>Planned Adventures</h2>
         <div className="button-container">
@@ -59,8 +59,9 @@ const Sessions = (props) => {
         </thead>
         <tbody>
           {sessions.map((session, i) => {
-            const spaceAvailable =
-              session.players.length === session["max-players"];
+            const spaceAvailable = session.characters
+              ? session.characters.length === session["max-players"]
+              : session.players.length === session["max-players"];
             const sessionPlanned = !!session["scheduled-date"];
 
             return (
@@ -109,10 +110,15 @@ const Sessions = (props) => {
                     : "TBD"}
                 </td>
                 <td className="column players">
-                  {getCharactersFromSession(session.players, characters)}
+                  {session.characters
+                    ? getCharactersFromSession(session.characters, characters)
+                    : getPlayersFromSession(session.players, players)}
                 </td>
                 <td className="column player-count">
-                  {session.players.length}/{session["max-players"]}
+                  {session.characters
+                    ? session.characters.length
+                    : session.players.length}
+                  /{session["max-players"]}
                 </td>
                 <td className="column discord-channel">
                   {session["discord-channel"]
@@ -134,25 +140,47 @@ const Sessions = (props) => {
           })}
         </tbody>
       </table>
-    </span>
+    </div>
   );
 };
 
 function getCharacterNameFromId(id: number, allCharacters) {
-  var matchingPlayer = allCharacters.find((p) => p.id === id);
+  let matchinCharacter = allCharacters.find((p) => p.id === id);
 
-  var name = matchingPlayer.nickname
-    ? matchingPlayer.nickname
+  let name = matchinCharacter.nickname
+    ? matchinCharacter.nickname
+    : matchinCharacter.name;
+
+  return name;
+}
+
+function getPlayerNameFromDndBeyondName(dndBeyondName: string, allPlayers) {
+  let matchingPlayer = allPlayers.find(
+    (p) => p["dndbeyond-name"] === dndBeyondName
+  );
+
+  let name = matchingPlayer["screen-name"]
+    ? matchingPlayer["screen-name"]
     : matchingPlayer.name;
 
   return name;
 }
 
-function getCharactersFromSession(playerIds, allCharacters) {
-  var playerList = [];
+function getCharactersFromSession(characterIds, allCharacters) {
+  let characterList = [];
 
-  playerIds.map((id) => {
-    playerList.push(getCharacterNameFromId(id, allCharacters));
+  characterIds.map((id) => {
+    characterList.push(getCharacterNameFromId(id, allCharacters));
+  });
+
+  return characterList.sort().join(", ");
+}
+
+function getPlayersFromSession(playerDndBeyondNames, allPlayers) {
+  let playerList = [];
+
+  playerDndBeyondNames.map((n) => {
+    playerList.push(getPlayerNameFromDndBeyondName(n, allPlayers));
   });
 
   return playerList.sort().join(", ");

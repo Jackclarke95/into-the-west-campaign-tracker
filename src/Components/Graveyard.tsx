@@ -27,7 +27,7 @@ const Graveyard = (props) => {
         <thead key="thead">
           <tr>
             <th className="column name">Name</th>
-            <th className="column current-level">Level Reached</th>
+            <th className="column level">Level Attained</th>
             <th className="column cause">Cause</th>
           </tr>
         </thead>
@@ -59,7 +59,7 @@ const Graveyard = (props) => {
                     {character.nickname ? character.nickname : character.name}
                   </a>
                 </td>
-                <td className="column current-level">
+                <td className="column level">
                   {calculateLevelFromSessions(
                     character,
                     character["starting-level"],
@@ -81,7 +81,8 @@ function countSessionsAttended(character, sessions) {
 
   sessions.map((session) => {
     if (
-      session.players.includes(character.id) &&
+      session.characters &&
+      session.characters.includes(character.id) &&
       new Date(session["scheduled-date"]) < new Date()
     ) {
       matchingSessions.push(session);
@@ -112,6 +113,11 @@ function calculateTotalSessionsToNextLevel(level: number) {
  * @returns {number} The character's level
  */
 function calculateLevelFromSessions(character, startingLevel, sessionCount) {
+  // Last session does not count toward level up since the character died on that session
+  if (character.retirement.dead === true) {
+    sessionCount--;
+  }
+
   let currentLevel = startingLevel;
   let remainingSessions = sessionCount;
   let sessionsToLevel = calculateTotalSessionsToNextLevel(currentLevel + 1);
@@ -120,11 +126,6 @@ function calculateLevelFromSessions(character, startingLevel, sessionCount) {
     remainingSessions -= sessionsToLevel;
     currentLevel++;
     sessionsToLevel = calculateTotalSessionsToNextLevel(currentLevel + 1);
-  }
-
-  // Last session does not count toward level up since the character died on that session
-  if (character.retirement.dead === true) {
-    currentLevel--;
   }
 
   return currentLevel;
