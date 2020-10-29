@@ -34,8 +34,6 @@ function SignUpForSessionContent() {
 }
 
 function renderDateBoxes() {
-  // TODO: Fix this - it's rendering as "[object Object]"
-
   var i = 1;
   const today = new Date();
 

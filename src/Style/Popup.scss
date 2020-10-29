@@ -18,6 +18,10 @@
     padding: 2em;
     display: flex;
     flex-direction: column;
+    .popup-body {
+      padding-left: 15%;
+      padding-right: 15%;
+    }
     .dismiss-button {
       margin-top: -1em;
       margin-right: -0.7em;
@@ -28,6 +32,9 @@
       font-size: xx-large;
       &:hover {
         cursor: pointer;
+      }
+      &::after {
+        content: "+";
       }
     }
     h2 {

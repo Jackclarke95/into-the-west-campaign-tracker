@@ -19,9 +19,7 @@ function Popup(title, content, className) {
         className={className}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="dismiss-button" onClick={() => dismissPopup()}>
-          +
-        </div>
+        <div className="dismiss-button" onClick={() => dismissPopup()}></div>
         <h2 className="popup-header">{title}</h2>
         <div className="popup-body">{content}</div>
       </div>
