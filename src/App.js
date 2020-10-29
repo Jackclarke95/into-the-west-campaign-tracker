@@ -119,6 +119,7 @@ class App extends React.Component {
                 <div>
                   Welcome to the Campaign Tracker. Please sign in to continue:
                 </div>
+                <p>Login with Email/Password coming soon...</p>
                 <div className="button-container">
                   <button onClick={signInWithGoogle}>
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1004px-Google_%22G%22_Logo.svg.png" />
