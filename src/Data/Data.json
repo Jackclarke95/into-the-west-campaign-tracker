@@ -615,7 +615,8 @@
     },
     {
       "name": "Lewis",
-      "dndbeyond-name": "Proxysaurus"
+      "dndbeyond-name": "Proxysaurus",
+      "email": "lewishtunstall@gmail.com"
     },
     {
       "name": "Dave",
@@ -653,7 +654,8 @@
     {
       "name": "Benjy",
       "dndbeyond-name": "Benjywa",
-      "dungeon-master": true
+      "dungeon-master": true,
+      "email": "benpalmer1981@gmail.com"
     },
     {
       "name": "Otis",
@@ -661,7 +663,8 @@
     },
     {
       "name": "Jonno",
-      "dndbeyond-name": "Jonno0902"
+      "dndbeyond-name": "Jonno0902",
+      "email": "jonno0902@googlemail.com"
     },
     {
       "name": "George",

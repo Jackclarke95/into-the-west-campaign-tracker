@@ -371,7 +371,7 @@ const Data = {
       "max-players": 5,
     },
     {
-      id: 33,
+      id: 32,
       name: "Help Chaia Clear Her Name!",
       "dungeon-master": "JackClarke",
       "suggested-by": "Chaia01",
@@ -620,6 +620,7 @@ const Data = {
     {
       name: "Lewis",
       "dndbeyond-name": "Proxysaurus",
+      email: "lewishtunstall@gmail.com",
     },
     {
       name: "Dave",
@@ -658,6 +659,7 @@ const Data = {
       name: "Benjy",
       "dndbeyond-name": "Benjywa",
       "dungeon-master": true,
+      email: "benpalmer1981@gmail.com",
     },
     {
       name: "Otis",
@@ -666,6 +668,7 @@ const Data = {
     {
       name: "Jonno",
       "dndbeyond-name": "Jonno0902",
+      email: "jonno0902@googlemail.com",
     },
     {
       name: "George",
@@ -928,13 +931,6 @@ const Data = {
       "session-id": 28,
       activity: { name: "Training", id: 3 },
       character: { id: 26109480, name: "Zak" },
-      details: "Large",
-      date: "2020 10 22",
-    },
-    {
-      "session-id": 28,
-      activity: { name: "Training", id: 3 },
-      character: { id: 26114444, name: "Luren" },
       details: "Large",
       date: "2020 10 22",
     },
