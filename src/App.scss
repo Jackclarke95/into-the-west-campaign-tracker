@@ -54,7 +54,7 @@ h1 {
 .top-banner {
   display: flex;
   flex-direction: row;
-  padding: 1em;
+  margin: 1em;
   justify-content: space-between;
   .character-info,
   .user-menu {
@@ -142,27 +142,38 @@ form {
   }
 }
 
-.panel {
-  background-color: #fbfbfb;
-  padding: 1em;
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
   margin: 1em;
-  display: inline-block;
-  &:not(:last-of-type) {
-    margin-bottom: 0;
+  &:not(:first-of-type) {
+    margin-top: 0;
   }
-  &:hover {
-    box-shadow: 0 0px 10px darken(#fbfbfb, 15%);
-  }
-  h2 {
-    text-align: left;
-  }
-  .header-and-button {
-    display: flex;
-    h2 {
-      flex-grow: 1;
+  .panel {
+    flex-grow: 1;
+    background-color: #fbfbfb;
+    padding: 1em;
+    margin-right: 1em;
+    display: inline-block;
+    &:last-of-type {
+      margin-right: 0;
+      width: 30%;
     }
-    .button-container {
-      display: inline-block;
+    &:hover {
+      box-shadow: 0 0px 10px darken(#fbfbfb, 15%);
+    }
+    h2 {
+      text-align: left;
+    }
+    .header-and-button {
+      display: flex;
+      h2 {
+        flex-grow: 1;
+      }
+      .button-container {
+        display: inline-block;
+      }
     }
   }
 }

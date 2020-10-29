@@ -3,8 +3,6 @@ import { signInWithGoogle, auth } from "./firebase.utils";
 import Characters from "./Components/Characters";
 import Graveyard from "./Components/Graveyard";
 import Sessions from "./Components/Sessions";
-import Links from "./Components/Links";
-import Rules from "./Components/Rules";
 import NextAdventure from "./Components/NextAdventure";
 import DeploymentDate from "./Components/DeploymentDate";
 import Facilities from "./Components/Facilities";
@@ -74,17 +72,29 @@ class App extends React.Component {
                     />
                   </div>
                 </div>
-                <NextAdventure
-                  sessions={this.state.liveData.sessions}
-                  players={this.state.liveData.players}
-                />
-                <div className="info">
-                  <Links linkGroups={this.state.liveData["link-groups"]} />
-                  <Rules />
+                <span className="row next-adventure-row">
+                  <NextAdventure
+                    sessions={this.state.liveData.sessions}
+                    players={this.state.liveData.players}
+                  />
+                </span>
+                <span className="row character-row">
+                  <Characters
+                    sessions={this.state.liveData.sessions}
+                    characters={this.state.liveData.characters}
+                    players={this.state.liveData.players}
+                  />
                   <Graveyard
                     sessions={this.state.liveData.sessions}
                     characters={this.state.liveData.characters}
                     players={this.state.liveData.players}
+                  />
+                </span>
+                <span className="row session-and-facilities-row">
+                  <Sessions
+                    sessions={this.state.liveData.sessions}
+                    players={this.state.liveData.players}
+                    characters={this.state.liveData.characters}
                   />
                   <Facilities
                     facilities={this.state.liveData.facilities}
@@ -92,19 +102,10 @@ class App extends React.Component {
                       this.state.liveData["downtime-activities"]
                     }
                   />
-                </div>
-                <Characters
-                  sessions={this.state.liveData.sessions}
-                  characters={this.state.liveData.characters}
-                  players={this.state.liveData.players}
-                />
-                <Sessions
-                  sessions={this.state.liveData.sessions}
-                  players={this.state.liveData.players}
-                  characters={this.state.liveData.characters}
-                />
+                </span>
               </>
             )}
+            {/* TODO: Better Links */}
             {/* TODO: Player shop */}
             {/* TODO: Mobile Styling */}
             <div className="bottom-banner">
