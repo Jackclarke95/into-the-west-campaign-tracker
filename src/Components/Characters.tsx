@@ -1,4 +1,6 @@
 import * as React from "react";
+import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
+import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 import "../Style/Characters.scss";
 
 const Characters = (props) => {
@@ -27,31 +29,31 @@ const Characters = (props) => {
         </div>
       </div>
       {players && sessions && characters ? (
-        <table>
-          <thead key="thead">
-            <tr>
-              <th className="column name">Name</th>
-              <th className="column race">Race</th>
-              <th className="column class">Class</th>
-              <th className="column current-level">Current Level</th>
-              <th className="column starting-level">Starting Level</th>
-              <th className="column session-count">Sessions Attended</th>
-              <th className="column sessions-to-level-up">
+        <Table>
+          <Thead key="thead">
+            <Tr>
+              <Th className="column name">Name</Th>
+              <Th className="column race">Race</Th>
+              <Th className="column class">Class</Th>
+              <Th className="column current-level">Current Level</Th>
+              <Th className="column starting-level">Starting Level</Th>
+              <Th className="column session-count">Sessions Attended</Th>
+              <Th className="column sessions-to-level-up">
                 Sessions Until Level Up
-              </th>
-              <th className="column next-session">Next Session</th>
-              <th className="column test-date">Player</th>
-            </tr>
-          </thead>
-          <tbody>
+              </Th>
+              <Th className="column next-session">Next Session</Th>
+              <Th className="column test-date">Player</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
             {characters.map((character) => {
               return (
-                <tr
+                <Tr
                   key={character.id}
                   data-id={character.id}
                   title={character.name}
                 >
-                  <td className="column name">
+                  <Td className="column name">
                     <a
                       className="avatar-link"
                       rel="noopener noreferrer"
@@ -70,8 +72,8 @@ const Characters = (props) => {
                     >
                       {character.nickname ? character.nickname : character.name}
                     </a>
-                  </td>
-                  <td className="column race">
+                  </Td>
+                  <Td className="column race">
                     <a
                       rel="noopener noreferrer"
                       target="_blank"
@@ -79,32 +81,32 @@ const Characters = (props) => {
                     >{`${character.race}${
                       character.subrace ? ` (${character.subrace})` : ""
                     }`}</a>
-                  </td>
-                  <td className="column class">
+                  </Td>
+                  <Td className="column class">
                     {formatClasses(character.classes)}
-                  </td>
-                  <td className="column current-level">
+                  </Td>
+                  <Td className="column current-level">
                     {calculateLevelFromSessions(
                       character["starting-level"],
                       countSessionsAttended(character, sessions)
                     )}
-                  </td>
-                  <td className="column starting-level">
+                  </Td>
+                  <Td className="column starting-level">
                     {character["starting-level"]}
-                  </td>
-                  <td className="column session-count">
+                  </Td>
+                  <Td className="column session-count">
                     {countSessionsAttended(character, sessions)}
-                  </td>
-                  <td className="column sessions-to-level-up">
+                  </Td>
+                  <Td className="column sessions-to-level-up">
                     {calculateRemainingSessionsForLevelUp(
                       character["starting-level"],
                       countSessionsAttended(character, sessions)
                     )}
-                  </td>
-                  <td className="column next-session">
+                  </Td>
+                  <Td className="column next-session">
                     {determineNextSession(character, sessions)}
-                  </td>
-                  <td className="column test-data">
+                  </Td>
+                  <Td className="column test-data">
                     {players.map((player) => {
                       if (
                         player["dndbeyond-name"] ===
@@ -123,12 +125,12 @@ const Characters = (props) => {
                       }
                       return null;
                     })}
-                  </td>
-                </tr>
+                  </Td>
+                </Tr>
               );
             })}
-          </tbody>
-        </table>
+          </Tbody>
+        </Table>
       ) : (
         <div>Loading...</div>
       )}

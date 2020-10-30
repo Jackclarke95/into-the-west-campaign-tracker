@@ -1,25 +1,21 @@
 .characters-panel {
   table {
-    td.column.name {
-      text-align: left;
-      align-items: center;
-      .avatar-link {
-        font-size: 0px;
-      }
-    }
-    thead,
-    tbody tr {
-      display: table;
-      width: 100%;
-      table-layout: fixed;
-    }
     thead {
       width: calc(100% - 1em); // scrollbar is 1em/16px width
     }
-    tbody {
-      display: block;
-      height: 322px;
-      overflow-y: auto;
+    .column {
+      &.current-level,
+      &.starting-level,
+      &.session-count {
+        width: 7%;
+      }
+      &.sessions-to-level-up {
+        width: 128px;
+      }
+      &.next-session {
+        width: 25%;
+      }
     }
   }
+  
 }

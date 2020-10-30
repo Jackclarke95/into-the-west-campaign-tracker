@@ -1,35 +1,15 @@
 .sessions-panel {
   table {
-    td.column.name {
-      text-align: left;
+    thead {
+      width: calc(100% - 1em); // scrollbar is 1em/16px width
     }
-  }
-  tr td button {
-    font-size: inherit;
-    height: 30px;
-    padding: 0;
-    padding-left: 12px;
-    padding-right: 12px;
-    white-space: nowrap;
-  }
-  .table-key {
-    margin-top: 1em;
-    margin-left: 1em;
-    margin-right: 1em;
-    flex-grow: 1;
-    display: flex;
-    justify-content: space-between;
-    .key-item {
-      display: flex;
-      align-items: center;
-      div {
-        cursor: default;
-      }
-      .key-colour-block {
-        height: 1em;
-        width: 1em;
-        margin-right: 0.5em;
-      }
+    tr td button {
+      font-size: inherit;
+      height: 30px;
+      padding: 0;
+      padding-left: 12px;
+      padding-right: 12px;
+      white-space: nowrap;
     }
   }
 }

@@ -72,31 +72,35 @@ class App extends React.Component {
                     />
                   </div>
                 </div>
-                <span className="row next-adventure-row">
+                <span className="container next-adventure-container">
                   <NextAdventure
                     sessions={this.state.liveData.sessions}
                     players={this.state.liveData.players}
                   />
                 </span>
-                <span className="row character-row">
+                <span className="container character-container">
                   <Characters
                     sessions={this.state.liveData.sessions}
                     characters={this.state.liveData.characters}
                     players={this.state.liveData.players}
                   />
                 </span>
-                <span className="row session-and-facilities-row">
+                <span className="container session-container">
                   <Sessions
                     sessions={this.state.liveData.sessions}
                     players={this.state.liveData.players}
                     characters={this.state.liveData.characters}
                   />
+                </span>
+                <span className="container facility-container">
                   <Facilities
                     facilities={this.state.liveData.facilities}
                     downtimeActivities={
                       this.state.liveData["downtime-activities"]
                     }
                   />
+                </span>
+                <span className="container graveyard-container">
                   <Graveyard
                     sessions={this.state.liveData.sessions}
                     characters={this.state.liveData.characters}

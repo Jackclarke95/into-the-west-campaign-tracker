@@ -1,5 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
+import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 import "../Style/Sessions.scss";
 import SuggestAdventurePopup from "./SuggestAdventurePopup";
 import SignUpForSessionPopup from "./SignUpForSessionPopup";
@@ -44,21 +46,21 @@ const Sessions = (props) => {
         </div>
       </div>
       {players && characters && sessions ? (
-        <table>
-          <thead key="thead">
-            <tr>
-              <th className="column name">Name</th>
-              <th className="column dungeon-master">Dungeon Master</th>
-              <th className="column suggested-by">Suggested By</th>
-              <th className="column suggested-date">First Suggested</th>
-              <th className="column scheduled-date">Scheduled Date</th>
-              <th className="column players">Players/Characters</th>
-              <th className="column player-count">Player Count</th>
-              <th className="column discord-channel">Discord Channel</th>
-              <th className="column status">Sign Up</th>
-            </tr>
-          </thead>
-          <tbody>
+        <Table>
+          <Thead key="thead">
+            <Tr>
+              <Th className="column name">Name</Th>
+              <Th className="column dungeon-master">Dungeon Master</Th>
+              <Th className="column suggested-by">Suggested By</Th>
+              <Th className="column suggested-date">First Suggested</Th>
+              <Th className="column scheduled-date">Scheduled Date</Th>
+              <Th className="column players">Players/Characters</Th>
+              <Th className="column player-count">Player Count</Th>
+              <Th className="column discord-channel">Discord Channel</Th>
+              <Th className="column status">Sign Up</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
             {sessions.map((session, i) => {
               const spaceAvailable = session.characters
                 ? session.characters.length === session["max-players"]
@@ -66,13 +68,13 @@ const Sessions = (props) => {
               const sessionPlanned = !!session["scheduled-date"];
 
               return (
-                <tr
+                <Tr
                   key={i}
                   data-session-planned={sessionPlanned}
                   data-space-available={spaceAvailable}
                 >
-                  <td className="column name">{session.name}</td>
-                  <td className="column dungeon-master">
+                  <Td className="column name">{session.name}</Td>
+                  <Td className="column dungeon-master">
                     {players.map((player) => {
                       if (
                         player["dndbeyond-name"] === session["dungeon-master"]
@@ -84,8 +86,8 @@ const Sessions = (props) => {
 
                       return null;
                     })}
-                  </td>
-                  <td className="column suggested-by">
+                  </Td>
+                  <Td className="column suggested-by">
                     {players.map((player) => {
                       if (
                         player["dndbeyond-name"] === session["suggested-by"]
@@ -97,38 +99,38 @@ const Sessions = (props) => {
 
                       return null;
                     })}
-                  </td>
-                  <td className="column suggested-date">
+                  </Td>
+                  <Td className="column suggested-date">
                     {session["suggested-date"]
                       ? new Date(session["suggested-date"]).toLocaleDateString(
                           "en-GB"
                         )
                       : "N/A"}
-                  </td>
-                  <td className="column date">
+                  </Td>
+                  <Td className="column date">
                     {session["scheduled-date"]
                       ? new Date(session["scheduled-date"]).toLocaleDateString(
                           "en-GB"
                         )
                       : "TBD"}
-                  </td>
-                  <td className="column players">
+                  </Td>
+                  <Td className="column players">
                     {session.characters
                       ? getCharactersFromSession(session.characters, characters)
                       : getPlayersFromSession(session.players, players)}
-                  </td>
-                  <td className="column player-count">
+                  </Td>
+                  <Td className="column player-count">
                     {session.characters
                       ? session.characters.length
                       : session.players.length}
                     /{session["max-players"]}
-                  </td>
-                  <td className="column discord-channel">
+                  </Td>
+                  <Td className="column discord-channel">
                     {session["discord-channel"]
                       ? session["discord-channel"]
                       : "TBD"}
-                  </td>
-                  <td className="column sign-up">
+                  </Td>
+                  <Td className="column sign-up">
                     <button
                       className="button sign-up"
                       disabled={spaceAvailable}
@@ -139,12 +141,12 @@ const Sessions = (props) => {
                     >
                       Sign Up
                     </button>
-                  </td>
-                </tr>
+                  </Td>
+                </Tr>
               );
             })}
-          </tbody>
-        </table>
+          </Tbody>
+        </Table>
       ) : (
         <div>Loading...</div>
       )}

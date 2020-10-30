@@ -1,4 +1,6 @@
 import * as React from "react";
+import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
+import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 import "../Style/Graveyard.scss";
 
 const Graveyard = (props) => {
@@ -28,23 +30,23 @@ const Graveyard = (props) => {
         <h2>Hero Graveyard</h2>
       </div>
       {players && characters && sessions ? (
-        <table>
-          <thead key="thead">
-            <tr>
-              <th className="column name">Name</th>
-              <th className="column level">Level Attained</th>
-              <th className="column cause">Cause</th>
-            </tr>
-          </thead>
-          <tbody>
+        <Table>
+          <Thead key="thead">
+            <Tr>
+              <Th className="column name">Name</Th>
+              <Th className="column level">Level Attained</Th>
+              <Th className="column cause">Cause</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
             {characters.map((character) => {
               return (
-                <tr
+                <Tr
                   key={character.id}
                   data-id={character.id}
                   title={character.name}
                 >
-                  <td className="column name">
+                  <Td className="column name">
                     <a
                       className="avatar-link"
                       rel="noopener noreferrer"
@@ -63,20 +65,20 @@ const Graveyard = (props) => {
                     >
                       {character.nickname ? character.nickname : character.name}
                     </a>
-                  </td>
-                  <td className="column level">
+                  </Td>
+                  <Td className="column level">
                     {calculateLevelFromSessions(
                       character,
                       character["starting-level"],
                       countSessionsAttended(character, sessions)
                     )}
-                  </td>
-                  <td className="column cause">{character.retirement.cause}</td>
-                </tr>
+                  </Td>
+                  <Td className="column cause">{character.retirement.cause}</Td>
+                </Tr>
               );
             })}
-          </tbody>
-        </table>
+          </Tbody>
+        </Table>
       ) : (
         <div>Loading...</div>
       )}

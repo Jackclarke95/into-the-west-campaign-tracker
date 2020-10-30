@@ -1,4 +1,6 @@
 import * as React from "react";
+import { Table, Thead, Tbody, Tr, Th, Td } from "react-super-responsive-table";
+import "react-super-responsive-table/dist/SuperResponsiveTableStyle.css";
 import "../Style/Facilities.scss";
 
 const Facilities = (props) => {
@@ -14,20 +16,20 @@ const Facilities = (props) => {
           <h2>Westeridge Facilities</h2>
         </div>
         {facilities ? (
-          <table>
-            <thead key="thead">
-              <tr>
-                <th className="column name">Facility</th>
-                <th className="column tier-level">Current Tier Level</th>
-                <th className="column uses">Total Uses</th>
-                <th className="column uses-to-level-up">Uses Until Level Up</th>
-              </tr>
-            </thead>
-            <tbody>
+          <Table>
+            <Thead key="thead">
+              <Tr>
+                <Th className="column name">Facility</Th>
+                <Th className="column tier-level">Current Tier Level</Th>
+                <Th className="column uses">Total Uses</Th>
+                <Th className="column uses-to-level-up">Uses Until Level Up</Th>
+              </Tr>
+            </Thead>
+            <Tbody>
               {facilities.map((f) => {
                 return (
-                  <tr>
-                    <td className="column name">
+                  <Tr>
+                    <Td className="column name">
                       <img
                         src={
                           process.env.PUBLIC_URL +
@@ -39,21 +41,21 @@ const Facilities = (props) => {
                         alt="logo"
                       />
                       {f.name}
-                    </td>
-                    <td className="column tier-level">
+                    </Td>
+                    <Td className="column tier-level">
                       {calculateTierLevel(f, downtimeActivities)}
-                    </td>
-                    <td className="column uses">
+                    </Td>
+                    <Td className="column uses">
                       {calculateFacilityUses(f, downtimeActivities)}
-                    </td>
-                    <td className="column uses-to-level-up">
+                    </Td>
+                    <Td className="column uses-to-level-up">
                       {calculateUsesToNextLevel(f, downtimeActivities)}
-                    </td>
-                  </tr>
+                    </Td>
+                  </Tr>
                 );
               })}
-            </tbody>
-          </table>
+            </Tbody>
+          </Table>
         ) : (
           <div>Loading...</div>
         )}
