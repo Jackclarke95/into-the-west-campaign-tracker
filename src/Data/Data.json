@@ -1,6 +1,28 @@
 {
   "characters": [
     {
+      "id": 38950925,
+      "player-dndbeyond-name": "Jonno0902",
+      "avatar-link": "17/733/636378312343935370.jpeg",
+      "name": "Relthine",
+      "race": "Aarakocra",
+      "classes": [{ "class": "Monk", "level": 6 }],
+      "starting-level": 6
+    },
+    {
+      "id": 32902489,
+      "player-dndbeyond-name": "ThePerkyRiolu",
+      "avatar-link": "11867/502/1581111423-32902489.jpeg",
+      "name": "Caduceus",
+      "nickname": "C.A.D.",
+      "race": "???",
+      "classes": [
+        { "class": "Cleric", "level": 2 },
+        { "class": "Artificer", "level": 7 }
+      ],
+      "starting-level": 9
+    },
+    {
       "id": 34044602,
       "player-dndbeyond-name": "Proxysaurus",
       "avatar-link": "12923/282/1581111423-34044602.jpeg",
@@ -286,6 +308,45 @@
   ],
   "sessions": [
     {
+      "id": 37,
+      "name": "Revenge - Investigating the North West Druid Circle",
+      "suggested-by": "Chaia01",
+      "suggested-date": "2020 11 15",
+      "characters": [27850604, 26128406, 38009220, 35316039, 34130081],
+      "max-players": 5
+    },
+    {
+      "id": 36,
+      "name": "The Mystery of Zhinas",
+      "dungeon-master": "JackClarke",
+      "suggested-by": "SchemingPnda",
+      "suggested-date": "2020 11 15",
+      "characters": [38009220, 27850604, 32902489, 26125998, 35316039],
+      "max-players": 5,
+      "discord-channel": "#session-4"
+    },
+    {
+      "id": 35,
+      "name": "Swamp Hunt - Eitr-Ormr (Hydra?)",
+      "dungeon-master": "SchemingPnda",
+      "suggested-by": "JackClarke",
+      "suggested-date": "2020 11 06",
+      "scheduled-date": "2020 11 23",
+      "characters": [38009220, 32902489, 27850604, 35316039, 33132303],
+      "max-players": 5,
+      "discord-channel": "#session-1"
+    },
+    {
+      "id": 34,
+      "name": "Babel's Tech Adventure",
+      "dungeon-master": "JackClarke",
+      "suggested-by": "SunRester",
+      "scheduled-date": "2020 11 15",
+      "characters": [26128406, 27850604, 35316039, 27850604],
+      "max-players": 5,
+      "discord-channel": "#session-2"
+    },
+    {
       "id": 24,
       "name": "WANTED: Iron Kara",
       "dungeon-master": "FreemDeem",
@@ -334,7 +395,7 @@
       "dungeon-master": "Benjywa",
       "suggested-by": "Benjywa",
       "suggested-date": "2020 10 13",
-      "scheduled-date": "2020 10 28",
+      "scheduled-date": "2020 11 12",
       "characters": [34189033, 26133759, 30038677, 26128406, 33132303],
       "max-players": 5,
       "discord-channel": "#session-4"
@@ -368,7 +429,7 @@
       "discord-channel": "#session-1"
     },
     {
-      "id": 32,
+      "id": 33,
       "name": "The Hamlin Horror",
       "dungeon-master": "FreemDeem",
       "suggested-by": "FreemDeem",
@@ -388,6 +449,7 @@
       "dungeon-master": "JackClarke",
       "suggested-by": "Chaia01",
       "suggested-date": "2020 10 28",
+      "scheduled-date": "2020 11 12",
       "characters": [27850604, 34130081, 35316039, 35382595, 27760478],
       "max-players": 5,
       "discord-channel": "#session-5"
@@ -956,6 +1018,30 @@
       "character": { "id": 26119200, "name": "Big Percy" },
       "details": "Large",
       "date": "2020 10 22"
+    },
+    {
+      "activity": { "name": "Research Lore", "id": 8 },
+      "character": { "id": 35316039, "name": "Hans" },
+      "details": "Bardic Instruments",
+      "date": "2020 10 09"
+    },
+    {
+      "activity": { "name": "Research Lore", "id": 8 },
+      "character": { "id": 27850604, "name": "Chaia" },
+      "details": "Small Dragons",
+      "date": "2020 10 25"
+    },
+    {
+      "activity": { "name": "Produce Scrolls and Potions", "id": 1 },
+      "character": { "id": 35316039, "name": "Ember" },
+      "details": "Potion of Healing",
+      "date": "2020 11 15"
+    },
+    {
+      "activity": { "name": "Research Lore", "id": 8 },
+      "character": { "id": 33132303, "name": "Ember" },
+      "details": "Soul Bag Destruction",
+      "date": "2020 11 15"
     }
   ]
 }
