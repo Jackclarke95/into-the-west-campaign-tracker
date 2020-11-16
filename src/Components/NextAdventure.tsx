@@ -5,14 +5,17 @@ const NextAdventure = (props) => {
   const players = props.players;
   let message;
 
-  const sessions = props.sessions
-    .filter(
-      (x) =>
-        new Date(x["scheduled-date"]) >= new Date() &&
-        x["scheduled-date"] !== undefined
-    )
+  const sessions = props.sessions.filter(
+    (x) =>
+      new Date(x["scheduled-date"]) >= new Date() &&
+      x["scheduled-date"] !== undefined
+  );
+
+  if (!sessions || sessions.length === 0) {
+    message = "None Scheduled";
+  } else {
     // Order by scheduled date
-    .sort((a, b) => {
+    sessions.sort((a, b) => {
       if (a["scheduled-date"] ? !b["scheduled-date"] : b["scheduled-date"])
         return -1;
 
@@ -22,9 +25,6 @@ const NextAdventure = (props) => {
       );
     });
 
-  if (!sessions && sessions.length === 0) {
-    message = "None Scheduled";
-  } else {
     const nextSession = sessions[0];
     message = nextSession["scheduled-date"]
       ? `${nextSession.name} | Scheduled: ${new Date(
