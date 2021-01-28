@@ -36,12 +36,21 @@ const Data = {
       "starting-level": 6,
     },
     {
+      id: 39965081,
+      "player-dndbeyond-name": "SchemingPnda",
+      "avatar-link": "14805/256/1581111423-39965081.jpeg",
+      name: "Frodi",
+      race: "Dragonborn",
+      classes: [{ class: "Fighter", level: 7 }],
+      "starting-level": 7,
+    },
+    {
       id: 26128406,
       "player-dndbeyond-name": "SunRester",
       "avatar-link": "9608/256/637216255844292177.jpeg",
       name: "Babel",
       race: "Kenku",
-      classes: [{ class: "Artificer", level: 7 }],
+      classes: [{ class: "Artificer", level: 9 }],
       "starting-level": 3,
     },
     {
@@ -308,12 +317,33 @@ const Data = {
   ],
   sessions: [
     {
+      id: 39,
+      name: "Highway to HELL",
+      "suggested-by": "BlackRoseSarah89",
+      "dungeon-master": "Benjywa",
+      "suggested-date": "2020 12 20",
+      "scheduled-date": "2021 01 27",
+      characters: [35316039, 27850604, 26128406, 26125998],
+      "discord-channel": "#session-1",
+    },
+    {
+      id: 38,
+      name: "Hans' Band Adventure",
+      "suggested-by": "Benjywa",
+      characters: [34185467, 35316039, 33132303, 26133759],
+      "discord-channel": "#session-2",
+      "scheduled-date": "2020 12 07",
+    },
+    {
       id: 37,
       name: "Revenge - Investigating the North West Druid Circle",
       "suggested-by": "Chaia01",
       "suggested-date": "2020 11 15",
+      "scheduled-date": "2020 01 25",
       characters: [27850604, 26128406, 38009220, 35316039, 34130081],
       "max-players": 5,
+      "dungeon-master": "JackClarke",
+      "discord-channel": "#session-5",
     },
     {
       id: 36,
@@ -324,6 +354,7 @@ const Data = {
       characters: [38009220, 27850604, 32902489, 26125998, 35316039],
       "max-players": 5,
       "discord-channel": "#session-4",
+      "scheduled-date": "2020 11 30",
     },
     {
       id: 35,
@@ -701,6 +732,7 @@ const Data = {
       name: "Dave",
       "dndbeyond-name": "SunRester",
       "dungeon-master": true,
+      email: "uwegamestech2014@gmail.com",
     },
     {
       name: "Rowan",
@@ -1047,7 +1079,30 @@ const Data = {
       details: "Soul Bag Destruction",
       date: "2020 11 15",
     },
+    {
+      activity: { name: "Research Lore", id: 8 },
+      character: { id: 38009220, name: "Mercury" },
+      details: "Druidic Circle Runes",
+      date: "2020 01 25",
+    },
+    {
+      activity: { name: "Scout Region", id: 10 },
+      character: { id: 27850604, name: "Chaia" },
+      details: "Westeridge Area",
+      date: "2020 01 25",
+    },
+    {
+      activity: { name: "Research Lore", id: 8 },
+      character: { id: 27850604, name: "Chaia" },
+      details: "Brass Dragons",
+      date: "2020 01 27",
+    },
+    {
+      activity: { name: "Rumours of the Explorers", id: 4 },
+      character: { id: 26128406, name: "Babel" },
+      details: "The Mad Tinker",
+      date: "2020 01 28",
+    },
   ],
 };
-
 export default Data;

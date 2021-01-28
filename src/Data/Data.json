@@ -36,12 +36,21 @@
       "starting-level": 6
     },
     {
+      "id": 39965081,
+      "player-dndbeyond-name": "SchemingPnda",
+      "avatar-link": "14805/256/1581111423-39965081.jpeg",
+      "name": "Frodi",
+      "race": "Dragonborn",
+      "classes": [{ "class": "Fighter", "level": 7 }],
+      "starting-level": 7
+    },
+    {
       "id": 26128406,
       "player-dndbeyond-name": "SunRester",
       "avatar-link": "9608/256/637216255844292177.jpeg",
       "name": "Babel",
       "race": "Kenku",
-      "classes": [{ "class": "Artificer", "level": 7 }],
+      "classes": [{ "class": "Artificer", "level": 9 }],
       "starting-level": 3
     },
     {
@@ -64,7 +73,7 @@
       "classes": [{ "class": "Fighter", "level": 8 }],
       "starting-level": 3,
       "retirement": {
-        "date": "2020 05 31",
+        "date": "2020 10 26",
         "cause": "Last seen in beholder's lair, presumed perished",
         "dead": true
       }
@@ -118,7 +127,11 @@
       "name": "Grimshroom",
       "race": "Goblin",
       "classes": [{ "class": "Druid", "level": 6 }],
-      "starting-level": 6
+      "starting-level": 6,
+      "retirement": {
+        "date": "2021 01 01",
+        "cause": "Retired by player"
+      }
     },
     {
       "id": 26375809,
@@ -161,7 +174,7 @@
       "race": "Tiefling",
       "classes": [{ "class": "Warlock", "level": 5 }],
       "starting-level": 3,
-      "retirement": { "date": "2020 05 31", "cause": "Killed by a beholder" }
+      "retirement": { "date": "2020 10 26", "cause": "Killed by a beholder" }
     },
     {
       "id": 27760478,
@@ -197,7 +210,7 @@
       ],
       "starting-level": 4,
       "retirement": {
-        "date": "2020 05 31",
+        "date": "2020 10 26",
         "cause": "Last seen in beholder's lair, presumed perished"
       }
     },
@@ -301,19 +314,47 @@
       "classes": [{ "class": "Paladin", "level": 6 }],
       "starting-level": 6,
       "retirement": {
-        "date": "2020 05 31",
+        "date": "2020 08 17",
         "cause": "Sacrificed self to a blue dragon to save party"
       }
     }
   ],
   "sessions": [
     {
+      "id": 39,
+      "name": "Highway to HELL",
+      "suggested-by": "BlackRoseSarah89",
+      "dungeon-master": "Benjywa",
+      "suggested-date": "2020 12 20",
+      "scheduled-date": "2021 01 27",
+      "characters": [
+        35316039,
+        27850604,
+        26128406,
+        26125998,
+        33132303,
+        39965081
+      ],
+      "discord-channel": "#session-1"
+    },
+    {
+      "id": 38,
+      "name": "Hans' Band Adventure",
+      "suggested-by": "Benjywa",
+      "characters": [34185467, 35316039, 33132303, 26133759],
+      "discord-channel": "#session-2",
+      "scheduled-date": "2020 12 07"
+    },
+    {
       "id": 37,
       "name": "Revenge - Investigating the North West Druid Circle",
       "suggested-by": "Chaia01",
       "suggested-date": "2020 11 15",
+      "scheduled-date": "2020 01 25",
       "characters": [27850604, 26128406, 38009220, 35316039, 34130081],
-      "max-players": 5
+      "max-players": 5,
+      "dungeon-master": "JackClarke",
+      "discord-channel": "#session-5"
     },
     {
       "id": 36,
@@ -323,7 +364,8 @@
       "suggested-date": "2020 11 15",
       "characters": [38009220, 27850604, 32902489, 26125998, 35316039],
       "max-players": 5,
-      "discord-channel": "#session-4"
+      "discord-channel": "#session-4",
+      "scheduled-date": "2020 11 30"
     },
     {
       "id": 35,
@@ -342,7 +384,7 @@
       "dungeon-master": "JackClarke",
       "suggested-by": "SunRester",
       "scheduled-date": "2020 11 15",
-      "characters": [26128406, 27850604, 35316039, 27850604],
+      "characters": [26128406, 27850604, 35316039, 35316039, 33132303],
       "max-players": 5,
       "discord-channel": "#session-2"
     },
@@ -396,7 +438,14 @@
       "suggested-by": "Benjywa",
       "suggested-date": "2020 10 13",
       "scheduled-date": "2020 11 12",
-      "characters": [34189033, 26133759, 30038677, 26128406, 33132303],
+      "characters": [
+        34189033,
+        26133759,
+        30038677,
+        26128406,
+        33132303,
+        27850604
+      ],
       "max-players": 5,
       "discord-channel": "#session-4"
     },
@@ -696,7 +745,8 @@
     {
       "name": "Dave",
       "dndbeyond-name": "SunRester",
-      "dungeon-master": true
+      "dungeon-master": true,
+      "email": "uwegamestech2014@gmail.com"
     },
     {
       "name": "Rowan",
@@ -772,7 +822,8 @@
           "id": 1
         },
         "discovery-activity": { "name": "Discern Origin", "id": 2 }
-      }
+      },
+      "gold-invested": 0
     },
     {
       "id": 2,
@@ -780,7 +831,8 @@
       "activities": {
         "preparation-activity": { "name": "Training", "id": 3 },
         "discovery-activity": { "name": "Rumours of the Explorers", "id": 4 }
-      }
+      },
+      "gold-invested": 0
     },
     {
       "id": 3,
@@ -788,7 +840,8 @@
       "activities": {
         "preparation-activity": { "name": "Secure Transport", "id": 5 },
         "discovery-activity": { "name": "Discern Origin", "id": 6 }
-      }
+      },
+      "gold-invested": 0
     },
     {
       "id": 4,
@@ -796,7 +849,8 @@
       "activities": {
         "preparation-activity": { "name": "Study Adversary", "id": 7 },
         "discovery-activity": { "name": "Research Lore", "id": 8 }
-      }
+      },
+      "gold-invested": 0
     },
     {
       "id": 5,
@@ -804,7 +858,8 @@
       "activities": {
         "preparation-activity": { "name": "Research Terrain", "id": 9 },
         "discovery-activity": { "name": "Scout Region", "id": 10 }
-      }
+      },
+      "gold-invested": 0
     },
     {
       "id": 6,
@@ -812,7 +867,8 @@
       "activities": {
         "preparation-activity": { "name": "Implore Deity", "id": 11 },
         "discovery-activity": { "name": "Divine Communion", "id": 12 }
-      }
+      },
+      "gold-invested": 0
     }
   ],
   "downtime-activities": [
@@ -1033,7 +1089,7 @@
     },
     {
       "activity": { "name": "Produce Scrolls and Potions", "id": 1 },
-      "character": { "id": 35316039, "name": "Ember" },
+      "character": { "id": 33132303, "name": "Ember" },
       "details": "Potion of Healing",
       "date": "2020 11 15"
     },
@@ -1042,6 +1098,30 @@
       "character": { "id": 33132303, "name": "Ember" },
       "details": "Soul Bag Destruction",
       "date": "2020 11 15"
+    },
+    {
+      "activity": { "name": "Research Lore", "id": 8 },
+      "character": { "id": 38009220, "name": "Mercury" },
+      "details": "Druidic Circle Runes",
+      "date": "2020 01 25"
+    },
+    {
+      "activity": { "name": "Scout Region", "id": 10 },
+      "character": { "id": 27850604, "name": "Chaia" },
+      "details": "Westeridge Area",
+      "date": "2020 01 25"
+    },
+    {
+      "activity": { "name": "Research Lore", "id": 8 },
+      "character": { "id": 27850604, "name": "Chaia" },
+      "details": "Brass Dragons",
+      "date": "2020 01 27"
+    },
+    {
+      "activity": { "name": "Rumours of the Explorers", "id": 4 },
+      "character": { "id": 26128406, "name": "Babel" },
+      "details": "The Mad Tinker",
+      "date": "2020 01 28"
     }
   ]
 }

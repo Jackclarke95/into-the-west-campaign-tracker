@@ -123,7 +123,9 @@ const Sessions = (props) => {
                     {session.characters
                       ? session.characters.length
                       : session.players.length}
-                    /{session["max-players"]}
+                    {session["max-players"]
+                      ? `/${session["max-players"]}`
+                      : null}
                   </Td>
                   <Td className="column discord-channel">
                     {session["discord-channel"]

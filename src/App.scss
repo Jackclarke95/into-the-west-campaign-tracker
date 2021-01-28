@@ -249,6 +249,12 @@ table {
         background-color: darken(#fbfbfb, 15%);
       }
     }
+    td.column.name {
+      text-align: left;
+    }
+    td {
+      text-align: center;
+    }
     td > * {
       vertical-align: middle;
     }

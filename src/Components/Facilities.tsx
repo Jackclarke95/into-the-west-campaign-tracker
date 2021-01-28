@@ -23,6 +23,7 @@ const Facilities = (props) => {
                 <Th className="column tier-level">Current Tier Level</Th>
                 <Th className="column uses">Total Uses</Th>
                 <Th className="column uses-to-level-up">Uses Until Level Up</Th>
+                <Th className="column gold-invested">Gold Invested</Th>
               </Tr>
             </Thead>
             <Tbody>
@@ -50,6 +51,9 @@ const Facilities = (props) => {
                     </Td>
                     <Td className="column uses-to-level-up">
                       {calculateUsesToNextLevel(f, downtimeActivities)}
+                    </Td>
+                    <Td className="column gold-invested">
+                      {f["gold-invested"]}
                     </Td>
                   </Tr>
                 );
@@ -82,11 +86,11 @@ function calculateFacilityUses(facility, activities) {
 function calculateTierLevel(facility, activities) {
   let facilityUses = calculateFacilityUses(facility, activities);
 
-  if (facilityUses < 10) {
-    return 1;
-  } else if (facilityUses < 25) {
+  if (facilityUses > 25 && facility["gold-invested"] >= 40000) {
+    return 3;
+  } else if (facilityUses > 10 && facility["gold-invested"] >= 15000) {
     return 2;
-  } else return 3;
+  } else return 1;
 }
 
 function calculateUsesToNextLevel(facility, activities) {
